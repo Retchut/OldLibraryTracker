@@ -18,7 +18,7 @@ public class LibraryTracker {
     }
     */
 
-    private static void trackerLoop(){
+    private static void trackerLoop(Library lib){
         Scanner scanner = new Scanner(System.in);
         while(true){
             try{
@@ -30,6 +30,20 @@ public class LibraryTracker {
                 System.out.println("0 - Exit and save the library.");
                 int input = scanner.nextInt();
                 System.out.println(input);
+
+                switch(input){
+                    case 1:
+                        lib.printLib();
+                    case 2:
+                        lib.addCard();
+                    case 3:
+                        lib.accessCard();
+                    case 4:
+                        lib.removeCard();
+                    case 0:
+                        System.out.println("The program will now exit, and your library will be saved.");
+                        return;
+                }
             }
             catch(InputMismatchException e){
                 System.out.println("You must input a valid integer.");
@@ -45,7 +59,7 @@ public class LibraryTracker {
         //Load library
         lib.loadLibrary();
 
-        trackerLoop();
+        trackerLoop(lib);
 
         lib.saveLibrary();
     }

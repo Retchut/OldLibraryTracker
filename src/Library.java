@@ -6,4 +6,20 @@ public class Library {
     public void saveLibrary(){
 
     }
+
+    public void printLib(){
+
+    }
+
+    public void addCard(){
+
+    }
+
+    public void accessCard(){
+
+    }
+
+    public void removeCard(){
+
+    }
 }
