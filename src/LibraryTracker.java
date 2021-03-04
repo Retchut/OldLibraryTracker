@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class LibraryTracker {
 /*
@@ -17,8 +19,22 @@ public class LibraryTracker {
     */
 
     private static void trackerLoop(){
+        Scanner scanner = new Scanner(System.in);
         while(true){
-            
+            try{
+                System.out.println("Please input what you want to do.");
+                System.out.println("1 - View your card collection.");
+                System.out.println("2 - Add cards to the library.");
+                System.out.println("3 - Modify a card in the library.");
+                System.out.println("4 - Remove cards from the library.");
+                System.out.println("0 - Exit and save the library.");
+                int input = scanner.nextInt();
+                System.out.println(input);
+            }
+            catch(InputMismatchException e){
+                System.out.println("You must input a valid integer.");
+                scanner.next();
+            }
         }
     }
 
