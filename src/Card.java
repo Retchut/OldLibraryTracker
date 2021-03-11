@@ -15,7 +15,7 @@ public class Card {
     public boolean getFirstEd(){ return this.firstEd; }
     public int getAmount(){ return this.amount; }
 
-    //setters
+    //Setters
     public void setName(String newName){ this.name = newName; }
     public void setExpansion(String newExpansion){ this.expansion = newExpansion; }
     public void setCondition(String newCondition){ this.condition = newCondition; }
@@ -34,7 +34,7 @@ public class Card {
     }
 
     private void printCard(){
-        //clearConsole()
+        //TODO: Clear console
         System.out.println("Name: " + getName());
         System.out.println("Expansion: " + getExpansion());
         System.out.println("Condition: " + getCondition());
@@ -44,7 +44,7 @@ public class Card {
     }
 
     private void addCopies(){
-        //clearConsole()
+        //TODO: Clear console
         Scanner scanner = new Scanner(System.in);
         while(true){
             try{
@@ -70,11 +70,10 @@ public class Card {
     }
 
     private void removeCopies(){
-        //clearConsole()
         Scanner scanner = new Scanner(System.in);
         while(true){
             try{
-                //clear console
+                //TODO: Clear console
                 System.out.println("Please input the number of cards you want to remove.");
                 int toRemove = scanner.nextInt();
 
@@ -104,7 +103,7 @@ public class Card {
         Scanner scanner = new Scanner(System.in);
         while(true){
             try{
-                //clear console
+                //TODO: Clear console
                 System.out.println("Please input what you want to do.");
                 System.out.println("1 - View card data.");
                 System.out.println("2 - Add copies of this card to the library.");
