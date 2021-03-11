@@ -22,6 +22,7 @@ public class LibraryTracker {
         Scanner scanner = new Scanner(System.in);
         while(true){
             try{
+                //clear console
                 System.out.println("Please input what you want to do.");
                 System.out.println("1 - View your card collection.");
                 System.out.println("2 - Add cards to the library.");
@@ -34,15 +35,22 @@ public class LibraryTracker {
                 switch(input){
                     case 1:
                         lib.printLib();
+                        break;
                     case 2:
                         lib.addCard();
+                        break;
                     case 3:
                         lib.accessCard();
+                        break;
                     case 4:
                         lib.removeCard();
+                        break;
                     case 0:
                         System.out.println("The program will now exit, and your library will be saved.");
                         return;
+                    default:
+                        System.out.println("Please input an integer from 0-4.");
+
                 }
             }
             catch(InputMismatchException e){
