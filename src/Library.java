@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Library {
     ArrayList<Card> collection;
+    Algorithms alg = new Algorithms();
 
     public void loadLibrary(){
     }
@@ -86,7 +87,27 @@ public class Library {
 
     public void accessCard(){
         //TODO: Clear console
+        if(this.collection.isEmpty()){
+            System.out.println("The library is empty.");
+        }
+        else{
+            //get the name of the card to remove
+            Scanner input = new Scanner(System.in);
+            String name = input.nextLine();
+            int pos = alg.binarySearch(this.collection, 0, this.collection.size() - 1, name);
 
+            //if the card doesn't exist
+            if(pos == -1){
+                //TODO: Clear console
+                System.out.println("That card is not on your library.");
+            }
+            //if the card exists in the library
+            else{
+                this.collection.get(pos).modifyCard();
+            }
+        }
+
+        return;
     }
 
     public void removeCard(){
