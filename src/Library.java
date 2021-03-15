@@ -16,6 +16,7 @@ public class Library {
 
     public void printLib(){
         //TODO: Clear console
+        //check if the collection is empty
         if(this.collection.isEmpty()){
             System.out.println("The library is empty.");
         }
@@ -87,6 +88,32 @@ public class Library {
 
     public void accessCard(){
         //TODO: Clear console
+        //check if the collection is empty
+        if(this.collection.isEmpty()){
+            System.out.println("The library is empty.");
+        }
+        else{
+            //get the name of the card to access
+            Scanner input = new Scanner(System.in);
+            String name = input.nextLine();
+            int pos = alg.binarySearch(this.collection, 0, this.collection.size() - 1, name);
+
+            //if the card doesn't exist
+            if(pos == -1){
+                //TODO: Clear console
+                System.out.println("That card is not on your library.");
+            }
+            //if the card exists in the library
+            else{
+                this.collection.get(pos).modifyCard();
+            }
+        }
+        return;
+    }
+
+    public void removeCard(){
+        //TODO: Clear console
+        //check if the collection is empty
         if(this.collection.isEmpty()){
             System.out.println("The library is empty.");
         }
@@ -103,15 +130,9 @@ public class Library {
             }
             //if the card exists in the library
             else{
-                this.collection.get(pos).modifyCard();
+                this.collection.remove(pos);
             }
         }
-
         return;
-    }
-
-    public void removeCard(){
-        //TODO: Clear console
-
     }
 }
