@@ -2,8 +2,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Card {
-    private String name, expansion, language;
+    private String name, expansion;
     private CONDITION condition;
+    private LANGUAGE language;
     private boolean firstEd;
     private int amount;
 
@@ -11,7 +12,7 @@ public class Card {
     public String getName(){ return this.name; }
     public String getExpansion(){ return this.expansion; }
     public CONDITION getCondition(){ return this.condition; }
-    public String getLanguage(){ return this.language; }
+    public LANGUAGE getLanguage(){ return this.language; }
     public boolean getFirstEd(){ return this.firstEd; }
     public int getAmount(){ return this.amount; }
 
@@ -19,14 +20,15 @@ public class Card {
     public void setName(String newName){ this.name = newName; }
     public void setExpansion(String newExpansion){ this.expansion = newExpansion; }
     public void setCondition(CONDITION newCondition){ this.condition = newCondition; }
-    public void setLanguage(String newLanguage){ this.language = newLanguage; }
+    public void setLanguage(LANGUAGE newLanguage){ this.language = newLanguage; }
     public void setFirstEd(boolean newFirstEd){ this.firstEd = newFirstEd; }
     public void setAmount(int newAmount) { this.amount = newAmount; }
 
     enum CONDITION { M, NM, EX, GD, LP, PL, P}
+    enum LANGUAGE {ENGLISH, FRENCH, GERMAN, SPANISH, ITALIAN, PORTUGUESE}
 
     //Class constructor
-    public Card(String name, String expansion, CONDITION condition, String language, boolean firstEd, int amount){
+    public Card(String name, String expansion, CONDITION condition, LANGUAGE language, boolean firstEd, int amount){
         setName(name);
         setExpansion(expansion);
         setCondition(condition);

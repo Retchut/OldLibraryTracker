@@ -18,7 +18,7 @@ public class Library {
             System.out.println("The file library.txt did not yet exist, so it was created.");
         }
         else{
-            System.out.println("A library.txt was detected and loaded.");
+            System.out.println("A library.txt was detected and will be loaded.");
             boolean success = true;
             Scanner fileReader = new Scanner(libraryFile);
             fileReader.useDelimiter("\\||\\n");
@@ -35,7 +35,7 @@ public class Library {
                     firstEd = fileReader.nextBoolean();
                     amount = fileReader.nextInt();
                     fileReader.nextLine();
-                    loadedCollection.add(new Card(name, expansion, Card.CONDITION.valueOf(condition), language, firstEd, amount));
+                    loadedCollection.add(new Card(name, expansion, Card.CONDITION.valueOf(condition), Card.LANGUAGE.valueOf(language), firstEd, amount));
                 }
             }
             catch(IllegalArgumentException e){
@@ -43,8 +43,10 @@ public class Library {
                 success = false;
                 fileReader.close();
             }
-            if(success)
+            if(success){
                 this.collection = loadedCollection;
+                System.out.println("The library was loaded successfully.");
+            }
         }
     }
 
@@ -57,7 +59,7 @@ public class Library {
             name = c.getName();
             expansion = c.getExpansion();
             condition = c.getCondition().name();
-            language = c.getLanguage();
+            language = c.getLanguage().name();
             firstEd = c.getFirstEd();
             amount = c.getAmount();
             fileWriter.write(name + "|" + expansion + "|" + condition + "|" + language + "|" + firstEd + "|" + amount + "\n");
@@ -83,12 +85,15 @@ public class Library {
     }
 
     public int addCard(Scanner scanner){
-        String name, expansion, language, boolInput;
+        String name, expansion;
         Card.CONDITION condition;
+        Card.LANGUAGE language;
         boolean firstEd;
         int amount;
         //TODO: Clear console
         try{
+            String input;
+
             //Get card name
             System.out.println("Please input the name of the card you'd like to add:");
             name = scanner.nextLine();
@@ -99,17 +104,18 @@ public class Library {
 
             //Get card condition
             System.out.println("Please input the condition of the card (M, NM, EX, GD, LP, PL or P):");
-            String c = scanner.nextLine();
-            condition = Card.CONDITION.valueOf(c);
+            input = scanner.nextLine();
+            condition = Card.CONDITION.valueOf(input);
 
             //Get card language
-            System.out.println("Please input the card language:");
-            language = scanner.nextLine();
+            System.out.println("Please input the card language (ENGLISH, FRENCH, GERMAN, SPANISH, ITALIAN or PORTUGUESE):");
+            input = scanner.nextLine();
+            language = Card.LANGUAGE.valueOf(input);
 
             //Get card edition
             System.out.println("Is the card 1st ed? (y/n)");
-            boolInput = scanner.nextLine().toLowerCase();
-            switch(boolInput){
+            input = scanner.nextLine().toLowerCase();
+            switch(input){
                 case "y":
                     firstEd = true;
                     break;
