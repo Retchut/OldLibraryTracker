@@ -3,26 +3,30 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class LibraryTracker {
-/*
-    private static String osName = System.getProperty("os.name").toLowerCase();
 
-    public static void clearConsole() throws IOException {
-        switch(osName){
-            case "linux":
-                Runtime.getRuntime().exec("clear");
-                break;
-            case "windows":
-                Runtime.getRuntime().exec("cls");
-                break;
+    public static void main(String[] args) {
+
+        //Initialize library object
+        Library lib = new Library();
+        try{
+            //Load library
+            lib.loadLibrary();
+
+            trackerLoop(lib);
+
+            //Save library
+            lib.saveLibrary();
+        }
+        catch (IOException e){
         }
     }
-    */
 
     private static void trackerLoop(Library lib){
         Scanner scanner = new Scanner(System.in);
         while(true){
             try{
                 //TODO: Clear console
+                System.out.println();
                 System.out.println("Please input what you want to do.");
                 System.out.println("1 - View your card collection.");
                 System.out.println("2 - Add cards to the library.");
@@ -30,6 +34,7 @@ public class LibraryTracker {
                 System.out.println("4 - Remove cards from the library.");
                 System.out.println("0 - Exit and save the library.");
                 int input = scanner.nextInt();
+                System.out.println();
 
                 switch(input){
                     case 1:
@@ -59,18 +64,18 @@ public class LibraryTracker {
             }
         }
     }
+/*
+    private static String osName = System.getProperty("os.name").toLowerCase();
 
-    public static void main(String[] args) {
-
-        //Initialize library object
-        Library lib = new Library();
-
-        //Load library
-        lib.loadLibrary();
-
-        trackerLoop(lib);
-
-        //Save library
-        lib.saveLibrary();
+    public static void clearConsole() throws IOException {
+        switch(osName){
+            case "linux":
+                Runtime.getRuntime().exec("clear");
+                break;
+            case "windows":
+                Runtime.getRuntime().exec("cls");
+                break;
+        }
     }
+    */
 }

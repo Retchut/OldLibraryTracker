@@ -1,17 +1,62 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.Locale;
+import java.util.List;
 import java.util.Scanner;
 
 public class Library {
-    ArrayList<Card> collection;
-    Algorithms alg = new Algorithms();
+    File libraryFile;
+    List<Card> collection;
+    Algorithms alg;
 
-    public void loadLibrary(){
+    public Library(){
+        this.libraryFile = new File("library.txt");
+        this.collection = new ArrayList<Card>();
+        this.alg = new Algorithms();
     }
 
-    public void saveLibrary(){
+    public void loadLibrary() throws IOException {
+        System.out.println();
+        if(libraryFile.createNewFile()){
+            System.out.println("The file library.txt did not yet exist, so it was created.");
+        }
+        else{
+            System.out.println("A library.txt was detected and loaded.");
+            Scanner fileReader = new Scanner(libraryFile);
+            fileReader.useDelimiter("\\||\\n");
+            String name, expansion, condition, language;
+            boolean firstEd;
+            int amount;
+            while(fileReader.hasNextLine()){
+                name = fileReader.next();
+                expansion = fileReader.next();
+                condition = fileReader.next();
+                language = fileReader.next();
+                firstEd = fileReader.nextBoolean();
+                amount = fileReader.nextInt();
+                fileReader.nextLine();
+                this.collection.add(new Card(name, expansion, Card.CONDITION.valueOf(condition), language, firstEd, amount));
+            }
+        }
+    }
 
+    public void saveLibrary() throws IOException {
+        FileWriter fileWriter = new FileWriter("library.txt");
+        String name, expansion, condition, language;
+        boolean firstEd;
+        int amount;
+        for(Card c : collection){
+            name = c.getName();
+            expansion = c.getExpansion();
+            condition = c.getCondition().name();
+            language = c.getLanguage();
+            firstEd = c.getFirstEd();
+            amount = c.getAmount();
+            fileWriter.write(name + "|" + expansion + "|" + condition + "|" + language + "|" + firstEd + "|" + amount + "\n");
+        }
+        fileWriter.close();
     }
 
     public void printLib(){
@@ -27,7 +72,7 @@ public class Library {
             }
         }
         //TODO: find a better way to make this work
-        System.out.println("\nPlease input something to exit.");
+        System.out.println("Please input something to exit.");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         return;
@@ -46,19 +91,19 @@ public class Library {
 
             //Get card expansion
             System.out.println("Please input the card expansion:");
-            expansion = scanner.next();
+            expansion = scanner.nextLine();
 
             //Get card condition
-            System.out.println("Please input the condition of the card:");
-            condition = scanner.next();
+            System.out.println("Please input the condition of the card (M, NM, EX, GD, LP, PL or P):");
+            condition = scanner.nextLine();
 
             //Get card language
             System.out.println("Please input the card language:");
-            language = scanner.next();
+            language = scanner.nextLine();
 
             //Get card edition
             System.out.println("Is the card 1st ed? (y/n)");
-            boolInput = scanner.next().toLowerCase();
+            boolInput = scanner.nextLine().toLowerCase();
             switch(boolInput){
                 case "y":
                     firstEd = true;
@@ -76,7 +121,7 @@ public class Library {
             amount = scanner.nextInt();
 
             //Create card
-            this.collection.add(new Card(name, expansion, condition, language, firstEd, amount));
+            this.collection.add(new Card(name, expansion, Card.CONDITION.valueOf(condition), language, firstEd, amount));
             System.out.println("A new card has been created with the given information and added to the library.");
         }
         catch(InputMismatchException e){

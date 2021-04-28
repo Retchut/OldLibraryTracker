@@ -3,14 +3,15 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Card {
-    private String name, expansion, condition, language;
+    private String name, expansion, language;
+    private CONDITION condition;
     private boolean firstEd;
     private int amount;
 
     //Getters
     public String getName(){ return this.name; }
     public String getExpansion(){ return this.expansion; }
-    public String getCondition(){ return this.name; }
+    public CONDITION getCondition(){ return this.condition; }
     public String getLanguage(){ return this.language; }
     public boolean getFirstEd(){ return this.firstEd; }
     public int getAmount(){ return this.amount; }
@@ -18,13 +19,15 @@ public class Card {
     //Setters
     public void setName(String newName){ this.name = newName; }
     public void setExpansion(String newExpansion){ this.expansion = newExpansion; }
-    public void setCondition(String newCondition){ this.condition = newCondition; }
+    public void setCondition(CONDITION newCondition){ this.condition = newCondition; }
     public void setLanguage(String newLanguage){ this.language = newLanguage; }
     public void setFirstEd(boolean newFirstEd){ this.firstEd = newFirstEd; }
     public void setAmount(int newAmount) { this.amount = newAmount; }
 
+    enum CONDITION { M, NM, EX, GD, LP, PL, P}
+
     //Class constructor
-    public Card(String name, String expansion, String condition, String language, boolean firstEd, int amount){
+    public Card(String name, String expansion, CONDITION condition, String language, boolean firstEd, int amount){
         setName(name);
         setExpansion(expansion);
         setCondition(condition);

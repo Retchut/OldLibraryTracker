@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.List;
 
 final public class Algorithms {
 
@@ -10,7 +10,7 @@ final public class Algorithms {
      * @param item  Item to look for
      * @return      Index of the item in the array
      */
-    static final int binarySearch(ArrayList<Card> arr, int i, int j, String item){
+    static final int binarySearch(List<Card> arr, int i, int j, String item){
         //array with 1 item
         if(i == j){
             return (arr.get(i).getName() == item)? i : -1;
