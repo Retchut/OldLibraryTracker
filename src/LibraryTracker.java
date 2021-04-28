@@ -34,6 +34,7 @@ public class LibraryTracker {
                 System.out.println("4 - Remove cards from the library.");
                 System.out.println("0 - Exit and save the library.");
                 int input = scanner.nextInt();
+                scanner.nextLine();
                 System.out.println();
 
                 switch(input){
@@ -41,7 +42,7 @@ public class LibraryTracker {
                         lib.printLib();
                         break;
                     case 2:
-                        if (lib.addCard() != 0)
+                        if (lib.addCard(scanner) != 0)
                             System.out.println("The operation was canceled. No changes to the library were made. Try again.");
                         break;
                     case 3:
@@ -52,6 +53,7 @@ public class LibraryTracker {
                         break;
                     case 0:
                         System.out.println("The program will now exit, and your library will be saved.");
+                        scanner.close();
                         return;
                     default:
                         System.out.println("Please input an integer from 0-4.");

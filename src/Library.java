@@ -1,10 +1,7 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Library {
     File libraryFile;
@@ -24,21 +21,32 @@ public class Library {
         }
         else{
             System.out.println("A library.txt was detected and loaded.");
+            boolean success = true;
             Scanner fileReader = new Scanner(libraryFile);
             fileReader.useDelimiter("\\||\\n");
             String name, expansion, condition, language;
             boolean firstEd;
             int amount;
-            while(fileReader.hasNextLine()){
-                name = fileReader.next();
-                expansion = fileReader.next();
-                condition = fileReader.next();
-                language = fileReader.next();
-                firstEd = fileReader.nextBoolean();
-                amount = fileReader.nextInt();
-                fileReader.nextLine();
-                this.collection.add(new Card(name, expansion, Card.CONDITION.valueOf(condition), language, firstEd, amount));
+            List<Card> loadedCollection = new ArrayList<Card>();
+            try{
+                while(fileReader.hasNextLine()){
+                    name = fileReader.next();
+                    expansion = fileReader.next();
+                    condition = fileReader.next();
+                    language = fileReader.next();
+                    firstEd = fileReader.nextBoolean();
+                    amount = fileReader.nextInt();
+                    fileReader.nextLine();
+                    loadedCollection.add(new Card(name, expansion, Card.CONDITION.valueOf(condition), language, firstEd, amount));
+                }
             }
+            catch(IllegalArgumentException e){
+                System.out.println("That library file is invalid. No library was loaded.");
+                success = false;
+                fileReader.close();
+            }
+            if(success)
+                this.collection = loadedCollection;
         }
     }
 
@@ -78,9 +86,9 @@ public class Library {
         return;
     }
 
-    public int addCard(){
-        Scanner scanner = new Scanner(System.in);
-        String name, expansion, condition, language, boolInput;
+    public int addCard(Scanner scanner){
+        String name, expansion, language, boolInput;
+        Card.CONDITION condition;
         boolean firstEd;
         int amount;
         //TODO: Clear console
@@ -95,7 +103,8 @@ public class Library {
 
             //Get card condition
             System.out.println("Please input the condition of the card (M, NM, EX, GD, LP, PL or P):");
-            condition = scanner.nextLine();
+            String c = scanner.nextLine();
+            condition = Card.CONDITION.valueOf(c);
 
             //Get card language
             System.out.println("Please input the card language:");
@@ -121,13 +130,19 @@ public class Library {
             amount = scanner.nextInt();
 
             //Create card
-            this.collection.add(new Card(name, expansion, Card.CONDITION.valueOf(condition), language, firstEd, amount));
+            this.collection.add(new Card(name, expansion, condition, language, firstEd, amount));
             System.out.println("A new card has been created with the given information and added to the library.");
         }
+        //TODO: find a better way to do this
         catch(InputMismatchException e){
             System.out.println("You must input a valid integer when asked to.");
             return 1;
         }
+        catch(IllegalArgumentException e){
+            System.out.println("That's not a valid value.");
+            return 1;
+        }
+
         return 0;
     }
 
