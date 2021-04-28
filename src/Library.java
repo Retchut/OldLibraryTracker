@@ -6,12 +6,10 @@ import java.util.*;
 public class Library {
     File libraryFile;
     List<Card> collection;
-    Algorithms alg;
 
     public Library(){
         this.libraryFile = new File("library.txt");
-        this.collection = new ArrayList<Card>();
-        this.alg = new Algorithms();
+        this.collection = new ArrayList<>();
     }
 
     public void loadLibrary() throws IOException {
@@ -27,7 +25,7 @@ public class Library {
             String name, expansion, condition, language;
             boolean firstEd;
             int amount;
-            List<Card> loadedCollection = new ArrayList<Card>();
+            List<Card> loadedCollection = new ArrayList<>();
             try{
                 while(fileReader.hasNextLine()){
                     name = fileReader.next();
@@ -67,7 +65,7 @@ public class Library {
         fileWriter.close();
     }
 
-    public void printLib(){
+    public void printLib(Scanner scanner){
         //TODO: Clear console
         //check if the collection is empty
         if(this.collection.isEmpty()){
@@ -81,9 +79,7 @@ public class Library {
         }
         //TODO: find a better way to make this work
         System.out.println("Please input something to exit.");
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        return;
+        scanner.nextLine();
     }
 
     public int addCard(Scanner scanner){
@@ -156,7 +152,7 @@ public class Library {
             //get the name of the card to access
             Scanner input = new Scanner(System.in);
             String name = input.nextLine();
-            int pos = alg.binarySearch(this.collection, 0, this.collection.size() - 1, name);
+            int pos = Algorithms.binarySearch(this.collection, 0, this.collection.size() - 1, name);
 
             //if the card doesn't exist
             if(pos == -1){
@@ -168,7 +164,6 @@ public class Library {
                 this.collection.get(pos).modifyCard();
             }
         }
-        return;
     }
 
     public void removeCard(){
@@ -181,7 +176,7 @@ public class Library {
             //get the name of the card to remove
             Scanner input = new Scanner(System.in);
             String name = input.nextLine();
-            int pos = alg.binarySearch(this.collection, 0, this.collection.size() - 1, name);
+            int pos = Algorithms.binarySearch(this.collection, 0, this.collection.size() - 1, name);
 
             //if the card doesn't exist
             if(pos == -1){
@@ -193,6 +188,5 @@ public class Library {
                 this.collection.remove(pos);
             }
         }
-        return;
     }
 }

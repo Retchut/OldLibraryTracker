@@ -1,4 +1,3 @@
-import java.io.Console;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -87,7 +86,6 @@ public class Card {
                 else if(toRemove > getAmount()){
                     System.out.println("That amount is larger than the copies of this card you currently own.");
                     System.out.println("You currently own " + getAmount() + " copies of " + getExpansion() + " " + getName() + ".");
-                    continue;
                 }
                 else{
                     setAmount(getAmount() - toRemove);

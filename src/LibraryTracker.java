@@ -18,6 +18,7 @@ public class LibraryTracker {
             lib.saveLibrary();
         }
         catch (IOException e){
+            e.printStackTrace();
         }
     }
 
@@ -39,7 +40,7 @@ public class LibraryTracker {
 
                 switch(input){
                     case 1:
-                        lib.printLib();
+                        lib.printLib(scanner);
                         break;
                     case 2:
                         if (lib.addCard(scanner) != 0)
