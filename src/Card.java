@@ -27,7 +27,9 @@ public class Card {
     enum CONDITION { M, NM, EX, GD, LP, PL, P}
     enum LANGUAGE {ENGLISH, FRENCH, GERMAN, SPANISH, ITALIAN, PORTUGUESE}
 
-    //Class constructor
+    /**
+     * @brief Default constructor
+     */
     public Card(String name, String expansion, CONDITION condition, LANGUAGE language, boolean firstEd, int amount){
         setName(name);
         setExpansion(expansion);
@@ -37,6 +39,9 @@ public class Card {
         setAmount(amount);
     }
 
+    /**
+     * @brief Prints detailed card data
+     */
     private void printCard(){
         //TODO: Clear console
         System.out.println("Name: " + getName());
@@ -47,43 +52,55 @@ public class Card {
         System.out.println("Amount: " + getAmount());
     }
 
-    private void addCopies(){
+    /**
+     * @brief Adds a number of copies to the library
+     * @param scanner Scanner to read input
+     * @return 0 on success, 1 otherwise
+     */
+    private int addCopies(Scanner scanner){
         //TODO: Clear console
-        Scanner scanner = new Scanner(System.in);
         while(true){
             try{
                 //clear console
                 System.out.println("Please input the number of cards you want to add.");
                 int toAdd = scanner.nextInt();
+                scanner.nextLine();
 
                 if(toAdd <= 0){
                     System.out.println("That is an invalid amount. No changes were made.");
-                    return;
+                    return 1;
                 }
                 else{
                     setAmount(getAmount() + toAdd);
                     System.out.println("You added " + toAdd + " copies of " + getExpansion() + " " + getName() + "to your library.");
                     System.out.println("You now own " + getAmount() + " copies of this card.");
+                    return 1;
                 }
             }
             catch(InputMismatchException e){
                 System.out.println("You must input a valid integer.");
-                scanner.next();
+                scanner.nextLine();
             }
         }
     }
 
-    private void removeCopies(){
-        Scanner scanner = new Scanner(System.in);
+
+    /**
+     * @brief Removes a number of copies from the library
+     * @param scanner Scanner to read input
+     * @return 0 on success, 1 otherwise
+     */
+    private int removeCopies(Scanner scanner){
         while(true){
             try{
                 //TODO: Clear console
                 System.out.println("Please input the number of cards you want to remove.");
                 int toRemove = scanner.nextInt();
+                scanner.nextLine();
 
                 if(toRemove <= 0){
                     System.out.println("That is an invalid amount. No changes were made.");
-                    return;
+                    return 1;
                 }
                 else if(toRemove > getAmount()){
                     System.out.println("That amount is larger than the copies of this card you currently own.");
@@ -93,17 +110,22 @@ public class Card {
                     setAmount(getAmount() - toRemove);
                     System.out.println("You removed " + toRemove + " copies of " + getExpansion() + " " + getName() + "to your library.");
                     System.out.println("You now own " + getAmount() + " copies of this card.");
+                    return 0;
                 }
             }
             catch(InputMismatchException e){
                 System.out.println("You must input a valid integer.");
-                scanner.next();
+                scanner.nextLine();
             }
         }
     }
 
-    public void modifyCard(){
-        Scanner scanner = new Scanner(System.in);
+    /**
+     * @brief Modifies card's data
+     * @param scanner Scanner to read input
+     * @return 0 on success, 1 otherwise
+     */
+    public int modifyCard(Scanner scanner){
         while(true){
             try{
                 //TODO: Clear console
@@ -119,20 +141,22 @@ public class Card {
                         this.printCard();
                         break;
                     case 2:
-                        this.addCopies();
+                        if(this.addCopies(scanner) != 0)
+                            return 1;
                         break;
                     case 3:
-                        this.removeCopies();
+                        if(this.removeCopies(scanner) != 0)
+                            return 1;
                         break;
                     case 0:
-                        return;
+                        return 0;
                     default:
                         System.out.println("Please input an integer from 0-3.");
                 }
             }
             catch(InputMismatchException e){
                 System.out.println("You must input a valid integer.");
-                scanner.next();
+                scanner.nextLine();
             }
         }
     }

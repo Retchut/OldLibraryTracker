@@ -47,10 +47,12 @@ public class LibraryTracker {
                             System.out.println("The operation was canceled. No changes to the library were made. Try again.");
                         break;
                     case 3:
-                        lib.accessCard();
+                        if(lib.accessCard(scanner) != 0)
+                            System.out.println("The operation was canceled. No changes to the library were made. Try again.");
                         break;
                     case 4:
-                        lib.removeCard();
+                        if(lib.removeCard(scanner) != 0)
+                            System.out.println("The operation was canceled. No changes to the library were made. Try again.");
                         break;
                     case 0:
                         System.out.println("The program will now exit, and your library will be saved.");

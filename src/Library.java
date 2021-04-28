@@ -7,11 +7,17 @@ public class Library {
     File libraryFile;
     List<Card> collection;
 
+    /**
+     * @brief Default constructor
+     */
     public Library(){
         this.libraryFile = new File("library.txt");
         this.collection = new ArrayList<>();
     }
 
+    /**
+     * @brief Loads library from file
+     */
     public void loadLibrary() throws IOException {
         System.out.println();
         if(libraryFile.createNewFile()){
@@ -50,6 +56,9 @@ public class Library {
         }
     }
 
+    /**
+     * @brief Saves library to file
+     */
     public void saveLibrary() throws IOException {
         FileWriter fileWriter = new FileWriter("library.txt");
         String name, expansion, condition, language;
@@ -67,6 +76,10 @@ public class Library {
         fileWriter.close();
     }
 
+    /**
+     * @brief Prints the library
+     * @param scanner Scanner to read input
+     */
     public void printLib(Scanner scanner){
         //TODO: Clear console
         //check if the collection is empty
@@ -84,6 +97,11 @@ public class Library {
         scanner.nextLine();
     }
 
+    /**
+     * @brief Adds a new card to the library
+     * @param scanner Scanner to read input
+     * @return 0 on success, 1 otherwise
+     */
     public int addCard(Scanner scanner){
         String name, expansion;
         Card.CONDITION condition;
@@ -148,50 +166,57 @@ public class Library {
         return 0;
     }
 
-    public void accessCard(){
+    /**
+     * @brief Accesses a card on the library
+     * @param scanner Scanner to read input
+     * @return 0 on success, 1 otherwise
+     */
+    public int accessCard(Scanner scanner){
         //TODO: Clear console
-        //check if the collection is empty
         if(this.collection.isEmpty()){
             System.out.println("The library is empty.");
+            return 1;
         }
         else{
-            //get the name of the card to access
-            Scanner input = new Scanner(System.in);
-            String name = input.nextLine();
+            scanner = new Scanner(System.in);
+            String name = scanner.nextLine();
             int pos = Algorithms.binarySearch(this.collection, 0, this.collection.size() - 1, name);
 
-            //if the card doesn't exist
             if(pos == -1){
                 //TODO: Clear console
                 System.out.println("That card is not on your library.");
+                return 1;
             }
-            //if the card exists in the library
             else{
-                this.collection.get(pos).modifyCard();
+                return this.collection.get(pos).modifyCard(scanner);
             }
         }
     }
 
-    public void removeCard(){
+    /**
+     * @brief Removes a card from the library
+     * @param scanner Scanner to read input
+     * @return 0 on success, 1 otherwise
+     */
+    public int removeCard(Scanner scanner){
         //TODO: Clear console
-        //check if the collection is empty
         if(this.collection.isEmpty()){
             System.out.println("The library is empty.");
+            return 1;
         }
         else{
-            //get the name of the card to remove
-            Scanner input = new Scanner(System.in);
-            String name = input.nextLine();
+            scanner = new Scanner(System.in);
+            String name = scanner.nextLine();
             int pos = Algorithms.binarySearch(this.collection, 0, this.collection.size() - 1, name);
 
-            //if the card doesn't exist
             if(pos == -1){
                 //TODO: Clear console
                 System.out.println("That card is not on your library.");
+                return 1;
             }
-            //if the card exists in the library
             else{
                 this.collection.remove(pos);
+                return 0;
             }
         }
     }
