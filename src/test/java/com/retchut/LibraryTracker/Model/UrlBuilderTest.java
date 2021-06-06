@@ -63,6 +63,18 @@ class UrlBuilderTest {
     }
 
     @Test
+    void urlWithSlash(){
+        String name = "D/D/D Supersight King Zero Maxwell";
+        String expansion = "LIOV";
+        String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Lightning-Overdrive/DDD-Supersight-King-Zero-Maxwell";
+
+        UrlBuilder urlBuilder = new UrlBuilder();
+        String returned = urlBuilder.buildUrl(name, expansion);
+        Assertions.assertEquals(expected, returned);
+    }
+
+
+    @Test
     void urlWithAt(){
         String name = "Bururu @Ignister";
         String expansion = "IGAS";

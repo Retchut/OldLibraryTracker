@@ -1,9 +1,5 @@
 package com.retchut.LibraryTracker.Model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 final public class UrlBuilder {
     private StringBuilder url;
 
@@ -15,7 +11,8 @@ final public class UrlBuilder {
     private void getUrlName(String name){
         for(int i = 0; i < name.length(); i++){
             char current = name.charAt(i);
-            if(current == '"' || current == '?' || current == '!' || current == ',' || current == '@'){
+            //TODO: put this in an array, and use contains (is it more efficient?)
+            if(current == '"' || current == '?' || current == '!' || current == ',' || current == '@'|| current == '/'){
                 //ignore
             }
             else if(current == '-' || current == ' '){

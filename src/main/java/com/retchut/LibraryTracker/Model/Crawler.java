@@ -1,8 +1,5 @@
 package com.retchut.LibraryTracker.Model;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Crawler {
     private String url;
 
