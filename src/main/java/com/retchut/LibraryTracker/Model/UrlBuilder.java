@@ -5,6 +5,7 @@ final public class UrlBuilder {
 
     private void getUrlExpansion(String expansionKey){
         url.append(ExpansionMap.getExpansion(expansionKey));
+        System.out.println(ExpansionMap.getExpansion(expansionKey));
         url.append('/');
     }
 
@@ -25,10 +26,15 @@ final public class UrlBuilder {
         }
         //TODO: support multiple versions of cards
     }
+    public UrlBuilder(){
+        this.url = new StringBuilder();
+    }
 
-    public void buildUrl(String name, String expansion){
+
+    public String buildUrl(String name, String expansion){
         url.append("https://www.cardmarket.com/en/YuGiOh/Products/Singles/");
         getUrlExpansion(expansion);
-        getUrlName(expansion);
+        getUrlName(name);
+        return url.toString();
     }
 }
