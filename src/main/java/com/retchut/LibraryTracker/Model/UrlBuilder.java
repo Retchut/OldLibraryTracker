@@ -4,7 +4,10 @@ final public class UrlBuilder {
     private StringBuilder url;
 
     private void getUrlExpansion(String expansionKey){
-        url.append(ExpansionMap.getExpansion(expansionKey));
+        String expansion = ExpansionMap.getExpansion(expansionKey);
+        if(expansion == "")
+            //TODO: throw exception / return false and go back
+        url.append(expansion);
         url.append('/');
     }
 
