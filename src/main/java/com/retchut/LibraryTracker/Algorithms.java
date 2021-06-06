@@ -1,3 +1,7 @@
+package com.retchut.LibraryTracker;
+
+import com.retchut.LibraryTracker.Model.Card;
+
 import java.util.List;
 
 final public class Algorithms {
@@ -10,7 +14,7 @@ final public class Algorithms {
      * @param item  Item to look for
      * @return      Index of the item in the array
      */
-    static int binarySearch(List<Card> arr, int i, int j, String item){
+    public static int binarySearch(List<Card> arr, int i, int j, String item){
         //array with 1 item
         if(i == j){
             return (arr.get(i).getName().equals(item))? i : -1;

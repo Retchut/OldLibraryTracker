@@ -1,3 +1,5 @@
+package com.retchut.LibraryTracker.Model;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

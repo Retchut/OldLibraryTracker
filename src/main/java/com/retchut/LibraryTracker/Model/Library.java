@@ -1,3 +1,7 @@
+package com.retchut.LibraryTracker.Model;
+
+import com.retchut.LibraryTracker.Algorithms;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -87,7 +91,7 @@ public class Library {
             System.out.println("The library is empty.");
         }
         else{
-            System.out.println("Amount\t|\tExpansion\t|\tCard Name");
+            System.out.println("Amount\t|\tExpansion\t|\tcom.retchut.LibraryTracker.Model.Card Name");
             for(Card current : collection){
                 System.out.println(current.getAmount() + "\t|\t" + current.getExpansion() + "\t|\t" + current.getName());
             }
