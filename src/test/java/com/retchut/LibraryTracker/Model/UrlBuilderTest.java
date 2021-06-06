@@ -63,6 +63,17 @@ class UrlBuilderTest {
     }
 
     @Test
+    void urlWithAt(){
+        String name = "Bururu @Ignister";
+        String expansion = "IGAS";
+        String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Ignition-Assault/Bururu-Ignister";
+
+        UrlBuilder urlBuilder = new UrlBuilder();
+        String returned = urlBuilder.buildUrl(name, expansion);
+        Assertions.assertEquals(expected, returned);
+    }
+
+    @Test
     void urlLotsOfSymbols(){
         String name = "Danger!? Tsuchinoko?";
         String expansion = "MP19";
