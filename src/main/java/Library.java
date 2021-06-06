@@ -27,7 +27,7 @@ public class Library {
             System.out.println("A library.txt was detected and will be loaded.");
             boolean success = true;
             Scanner fileReader = new Scanner(libraryFile);
-            fileReader.useDelimiter("\\||\\n");
+            fileReader.useDelimiter("[|\\n]");
             String name, expansion, condition, language;
             boolean firstEd;
             int amount;

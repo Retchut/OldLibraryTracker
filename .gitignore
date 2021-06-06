@@ -1,4 +1,6 @@
-.idea
-out
+.idea/
+.gradle/
+out/
+build/
 *.iml
 *.txt

@@ -10,10 +10,10 @@ final public class Algorithms {
      * @param item  Item to look for
      * @return      Index of the item in the array
      */
-    static final int binarySearch(List<Card> arr, int i, int j, String item){
+    static int binarySearch(List<Card> arr, int i, int j, String item){
         //array with 1 item
         if(i == j){
-            return (arr.get(i).getName() == item)? i : -1;
+            return (arr.get(i).getName().equals(item))? i : -1;
         }
         //array of a different size
         else if (j > i){

@@ -68,14 +68,13 @@ public class Card {
 
                 if(toAdd <= 0){
                     System.out.println("That is an invalid amount. No changes were made.");
-                    return 1;
                 }
                 else{
                     setAmount(getAmount() + toAdd);
                     System.out.println("You added " + toAdd + " copies of " + getExpansion() + " " + getName() + "to your library.");
                     System.out.println("You now own " + getAmount() + " copies of this card.");
-                    return 1;
                 }
+                return 1;
             }
             catch(InputMismatchException e){
                 System.out.println("You must input a valid integer.");
