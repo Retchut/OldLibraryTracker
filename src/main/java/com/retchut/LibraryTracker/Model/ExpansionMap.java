@@ -9,6 +9,108 @@ final public class ExpansionMap {
 
     static{
         expansions = new HashMap<>();
+
+        //Booster Packs  -   taken from https://yugioh.fandom.com/wiki/Booster_Pack
+        //International (Series 1, 2, 3 equivalent)
+        expansions.put("LOB", "Legend-of-Blue-Eyes-White-Dragon");
+        expansions.put("MRD", "Metal-Raiders");
+        expansions.put("SRL", "Spell-Ruler");
+        expansions.put("PSV", "Pharaohs-Servant");
+        expansions.put("LON", "Labyrinth-of-Nightmare");
+        expansions.put("LOD", "Legacy-of-Darkness");
+        expansions.put("PGD", "Pharaonic-Guardian");
+        expansions.put("MFC", "Magicians-Force");
+        expansions.put("DCR", "Dark-Crisis");
+        expansions.put("IOC", "Invasion-of-Chaos");
+        expansions.put("AST", "Ancient-Sanctuary");
+
+        //Series 4
+        expansions.put("SOD", "Soul-of-the-Duelist");
+        expansions.put("RSD", "Rise-of-Destiny");
+        expansions.put("FET", "Flaming-Eternity");
+        expansions.put("TLM", "The-Lost-Millennium");
+        expansions.put("CRV", "Cybernetic-Revolution");
+        expansions.put("EEN", "Elemental-Energy");
+        expansions.put("SOI", "Shadow-of-Infinity");
+        expansions.put("EOJ", "Enemy-of-Justice");
+
+        //Series 5
+        expansions.put("POTD", "Power-of-the-Duelist");
+        expansions.put("CDIP", "Cyberdark-Impact");
+        expansions.put("STON", "Strike-of-Neos");
+        expansions.put("FOTB", "Force-of-the-Breaker");
+        expansions.put("TAEV", "Tactical-Evolution");
+        expansions.put("GLAS", "Gladiators-Assault");
+        expansions.put("PTDN", "Phantom-Darkness");
+        expansions.put("LODT", "Light-of-Destruction");
+
+
+        //Series 6
+        expansions.put("TDGS", "The-Duelist-Genesis");
+        expansions.put("CSOC", "Crossroads-of-Chaos");
+        expansions.put("CRMS", "Crimson-Crisis");
+        expansions.put("RGBT", "Raging-Battle");
+        expansions.put("ANPR", "Ancient-Prophecy");
+        expansions.put("SOVR", "Stardust-Overdrive");
+        expansions.put("ABPF", "Absolute-Powerforce");
+        expansions.put("TSHD", "The-Shining-Darkness");
+
+        //Series 7
+        expansions.put("DREV", "Duelist-Revolution");
+        expansions.put("STBL", "Starstrike-Blast");
+        expansions.put("STOR", "Storm-of-Ragnarok");
+        expansions.put("EXVC", "Extreme-Victory");
+        expansions.put("GENF", "Generation-Force");
+        expansions.put("PHSW", "Photon-Shockwave");
+        expansions.put("ORCS", "Order-of-Chaos");
+        expansions.put("GAOV", "Galactic-Overlord");
+
+        //Series 8
+        expansions.put("REDU", "Return-of-the-Duelist");
+        expansions.put("ABYR", "Abyss-Rising");
+        expansions.put("CBLZ", "Cosmo-Blazer");
+        expansions.put("LTGY", "Lord-of-the-Tachyon-Galaxy");
+        expansions.put("JOTL", "Judgment-of-the-Light");
+        expansions.put("SHSP", "Shadow-Specters");
+        expansions.put("LVAL", "Legacy-of-the-Valiant");
+        expansions.put("PRIO", "Primal-Origin");
+
+        //Series 9
+        expansions.put("DUEA", "Duelist-Alliance");
+        expansions.put("NECH", "The-New-Challengers");
+        expansions.put("SECE", "Secrets-of-Eternity");
+        expansions.put("CROS", "Crossed-Souls");
+        expansions.put("CORE", "Clash-of-Rebellions");
+        expansions.put("DOCS", "Dimension-of-Chaos");
+        expansions.put("BOSH", "Breakers-of-Shadow");
+        expansions.put("SHVI", "Shining-Victories");
+        expansions.put("TDIL", "The-Dark-Illusion");
+        expansions.put("INOV", "Invasion-Vengeance");
+        expansions.put("RATE", "Raging-Tempest");
+        expansions.put("MACR", "Maximum-Crisis");
+
+        //Series 10
+        expansions.put("COTD", "Code-of-the-Duelist");
+        expansions.put("CIBR", "Circuit-Break");
+        expansions.put("EXFO", "Extreme-Force");
+        expansions.put("FLOD", "Flames-of-Destruction");
+        expansions.put("CYHO", "Cybernetic-Horizon");
+        expansions.put("SOFU", "Soul-Fusion");
+        expansions.put("SAST", "Savage-Strike");
+        expansions.put("DANE", "Dark-Neostorm");
+        expansions.put("RIRA", "Rising-Rampage");
+        expansions.put("CHIM", "Chaos-Impact");
+        expansions.put("IGAS", "Ignition-Assault");
+        expansions.put("ETCO", "Eternity-Code");
+
+        //Series 11
+        expansions.put("ROTD", "Rise-of-the-Duelist");
+        expansions.put("PHRA", "Phantom-Rage");
+        expansions.put("BLVO", "Blazing-Vortex");
+        expansions.put("LIOV", "Lightning-Overdrive");
+        expansions.put("DAMA", "Dawn-of-Majesty");
+
+        //Expansion Packs
         //Taken from https://yugioh.fandom.com/wiki/Expansion_Pack
 
         //Booster SP / Deck Build Packs
