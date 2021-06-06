@@ -181,7 +181,7 @@ final public class ExpansionMap {
         expansions.put("WSUP", "World-Superstars");
     }
 
-    public String getExpansion(String key){
+    public static String getExpansion(String key){
         if(expansions.containsKey(key))
             return expansions.get(key);
         return "";
