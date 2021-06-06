@@ -62,6 +62,7 @@ class UrlBuilderTest {
         Assertions.assertEquals(expected, returned);
     }
 
+
     @Test
     void urlWithSlash(){
         String name = "D/D/D Supersight King Zero Maxwell";
@@ -73,6 +74,17 @@ class UrlBuilderTest {
         Assertions.assertEquals(expected, returned);
     }
 
+
+    @Test
+    void urlWithAmpersand(){
+        String name = "Ghost Reaper & Winter Cherries";
+        String expansion = "DUPO";
+        String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Duel-Power/Ghost-Reaper-Winter-Cherries";
+
+        UrlBuilder urlBuilder = new UrlBuilder();
+        String returned = urlBuilder.buildUrl(name, expansion);
+        Assertions.assertEquals(expected, returned);
+    }
 
     @Test
     void urlWithAt(){

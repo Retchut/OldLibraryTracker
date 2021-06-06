@@ -6,6 +6,7 @@ final public class UrlBuilder {
     private void getUrlExpansion(String expansionKey){
         String expansion = ExpansionMap.getExpansion(expansionKey);
         if(expansion == "")
+            System.out.println("There's not such an expansion");
             //TODO: throw exception / return false and go back
         url.append(expansion);
         url.append('/');
@@ -15,7 +16,7 @@ final public class UrlBuilder {
         for(int i = 0; i < name.length(); i++){
             char current = name.charAt(i);
             //TODO: put this in an array, and use contains (is it more efficient?)
-            if(current == '"' || current == '?' || current == '!' || current == ',' || current == '@'|| current == '/'){
+            if(current == '"' || current == '?' || current == '!' || current == ',' || current == '@'|| current == '/' || current == '&'){
                 //ignore
             }
             else if(current == '-' || current == ' '){
