@@ -10,7 +10,8 @@ final public class ExpansionMap {
     static{
         expansions = new HashMap<>();
 
-        //Booster Packs  -   taken from https://yugioh.fandom.com/wiki/Booster_Pack
+        //Booster Packs
+        //Taken from https://yugioh.fandom.com/wiki/Booster_Pack
         //International (Series 1, 2, 3 equivalent)
         expansions.put("LOB", "Legend-of-Blue-Eyes-White-Dragon");
         expansions.put("MRD", "Metal-Raiders");
@@ -109,6 +110,10 @@ final public class ExpansionMap {
         expansions.put("BLVO", "Blazing-Vortex");
         expansions.put("LIOV", "Lightning-Overdrive");
         expansions.put("DAMA", "Dawn-of-Majesty");
+
+        //Starter, structure and Preconstructed decks
+        //Taken from https://yugioh.fandom.com/wiki/Starter_Deck
+        //TODO: add these
 
         //Expansion Packs
         //Taken from https://yugioh.fandom.com/wiki/Expansion_Pack
