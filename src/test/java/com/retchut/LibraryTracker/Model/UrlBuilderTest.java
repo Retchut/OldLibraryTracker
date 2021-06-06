@@ -76,6 +76,29 @@ class UrlBuilderTest {
 
 
     @Test
+    void urlWithEquals(){
+        String name = "Damage = Reptile";
+        String expansion = "ANGU";
+        String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Ancient-Guardians/Damage-Reptile";
+
+        UrlBuilder urlBuilder = new UrlBuilder();
+        String returned = urlBuilder.buildUrl(name, expansion);
+        Assertions.assertEquals(expected, returned);
+    }
+
+    @Test
+    void urlWithDoublePoints(){
+        String name = "Number 39: Utopia";
+        String expansion = "DUPO";
+        String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Duel-Power/Number-39-Utopia";
+
+        UrlBuilder urlBuilder = new UrlBuilder();
+        String returned = urlBuilder.buildUrl(name, expansion);
+        Assertions.assertEquals(expected, returned);
+    }
+
+
+    @Test
     void urlWithAmpersand(){
         String name = "Ghost Reaper & Winter Cherries";
         String expansion = "DUPO";

@@ -1,5 +1,8 @@
 package com.retchut.LibraryTracker.Model;
 
+import java.util.Arrays;
+import java.util.List;
+
 final public class UrlBuilder {
     private StringBuilder url;
 
@@ -13,10 +16,13 @@ final public class UrlBuilder {
     }
 
     private void getUrlName(String name){
+        //Characters cardmarket seems to ignore, when creating the url of cards
+        List<Character> ignoreChars = Arrays.asList('"', '?', '!', ',', '@', '/', '&', '=', ':');
+
         for(int i = 0; i < name.length(); i++){
             char current = name.charAt(i);
             //TODO: put this in an array, and use contains (is it more efficient?)
-            if(current == '"' || current == '?' || current == '!' || current == ',' || current == '@'|| current == '/' || current == '&'){
+            if(ignoreChars.contains(current)){
                 //ignore
             }
             else if(current == '-' || current == ' '){
