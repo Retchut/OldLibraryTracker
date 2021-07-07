@@ -1,6 +1,8 @@
+.vscode
 .idea/
 .gradle/
 out/
 build/
 *.iml
 *.txt
+!expansions.txt
