@@ -154,6 +154,17 @@ class UrlBuilderTest {
     }
 
     @Test
+    void urlWithParentheses(){
+        String name = "Knightmare Unicorn (V.1 - Rare)";
+        String expansion = "GEIM";
+        String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Genesis-Impact/Knightmare-Unicorn-V1-Rare";
+
+        UrlBuilder urlBuilder = new UrlBuilder();
+        String returned = urlBuilder.buildUrl(name, expansion);
+        Assertions.assertEquals(expected, returned);
+    }
+
+    @Test
     void urlQuotationMarks1() {
         String name = "\"A\" Cell Breeding Device";
         String expansion = "FOTB";

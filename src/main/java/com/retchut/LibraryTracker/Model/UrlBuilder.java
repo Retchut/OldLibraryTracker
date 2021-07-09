@@ -17,7 +17,7 @@ final public class UrlBuilder {
 
     private void getUrlName(String name){
         //Characters cardmarket seems to ignore, when creating the url of cards
-        List<Character> ignoreChars = Arrays.asList('"', '?', '!', ',', '@', '/', '&', '=', ':');
+        List<Character> ignoreChars = Arrays.asList('"', '?', '!', ',', '@', '/', '&', '=', ':', '(', ')', '.');
 
         for(int i = 0; i < name.length(); i++){
             char current = name.charAt(i);
