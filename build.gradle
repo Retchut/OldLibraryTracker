@@ -6,7 +6,7 @@ plugins {
 group 'com.retchut.LibraryTracker'
 
 application{
-    mainClass.set("LibraryTracker")
+    mainClass.set("com.retchut.LibraryTracker.LibraryTracker")
 }
 
 run{
