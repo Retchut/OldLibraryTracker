@@ -154,10 +154,21 @@ class UrlBuilderTest {
     }
 
     @Test
-    void urlWithParentheses(){
+    void urlWithParentheses1(){
         String name = "Knightmare Unicorn (V.1 - Rare)";
         String expansion = "GEIM";
         String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Genesis-Impact/Knightmare-Unicorn-V1-Rare";
+
+        UrlBuilder urlBuilder = new UrlBuilder();
+        String returned = urlBuilder.buildUrl(name, expansion);
+        Assertions.assertEquals(expected, returned);
+    }
+
+    @Test
+    void urlWithParentheses2(){
+        String name = "The Winged Dragon of Ra (V.2 - Ghost Rare)";
+        String expansion = "LED7";
+        String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Legendary-Duelists-Rage-of-Ra/The-Winged-Dragon-of-Ra-V2-Ghost-Rare";
 
         UrlBuilder urlBuilder = new UrlBuilder();
         String returned = urlBuilder.buildUrl(name, expansion);
@@ -180,6 +191,51 @@ class UrlBuilderTest {
         String name = "\"A\" Cell Incubator";
         String expansion = "GLAS";
         String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Gladiators-Assault/A-Cell-Incubator";
+
+        UrlBuilder urlBuilder = new UrlBuilder();
+        String returned = urlBuilder.buildUrl(name, expansion);
+        Assertions.assertEquals(expected, returned);
+    }
+
+
+    @Test
+    void alternateRarities1(){
+        String name = "Effect Veiler (V.2 - Ultimate Rare)";
+        String expansion = "DREV";
+        String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Duelist-Revolution/Effect-Veiler-V-2";
+
+        UrlBuilder urlBuilder = new UrlBuilder();
+        String returned = urlBuilder.buildUrl(name, expansion);
+        Assertions.assertEquals(expected, returned);
+    }
+
+    @Test
+    void alternateRarities2(){
+        String name = "Blue-Eyes White Dragon (V.2 - Ultimate Rare)\n";
+        String expansion = "YSKR";
+        String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Starter-Deck-Kaiba-Reloaded/Blue-Eyes-White-Dragon-V-2";
+
+        UrlBuilder urlBuilder = new UrlBuilder();
+        String returned = urlBuilder.buildUrl(name, expansion);
+        Assertions.assertEquals(expected, returned);
+    }
+
+    @Test
+    void alternateRarities3(){
+        String name = "Celestia, Lightsworn Angel (V.2 - Ultimate Rare)";
+        String expansion = "LODT";
+        String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Light-of-Destruction/Celestia-Lightsworn-Angel-V-2-Ultimate-Rare";
+
+        UrlBuilder urlBuilder = new UrlBuilder();
+        String returned = urlBuilder.buildUrl(name, expansion);
+        Assertions.assertEquals(expected, returned);
+    }
+
+    @Test
+    void alternateRarities4(){
+        String name = "Lightning Storm (V.2 - Starlight Rare)";
+        String expansion = "IGAS";
+        String expected = "https://www.cardmarket.com/en/YuGiOh/Products/Singles/Ignition-Assault/Lightning-Storm-V-2-Prismatic-Secret-Rare";
 
         UrlBuilder urlBuilder = new UrlBuilder();
         String returned = urlBuilder.buildUrl(name, expansion);
