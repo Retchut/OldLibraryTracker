@@ -117,7 +117,8 @@ public class Library {
             String input;
 
             //Get card name
-            System.out.println("Please input the name of the card you'd like to add:");
+            System.out.println("Please input the name of the card you'd like to add, taking into account any possible alternate versions, if said versions exist:");
+            System.out.println("E.g.: \"The Winged Dragon of Ra (V.2 - Ghost Rare)\"");
             name = scanner.nextLine();
 
             //Get card expansion

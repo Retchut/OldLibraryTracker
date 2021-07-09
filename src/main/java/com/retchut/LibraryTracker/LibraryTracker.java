@@ -1,5 +1,7 @@
 package com.retchut.LibraryTracker;
 
+import com.retchut.LibraryTracker.Model.Card;
+import com.retchut.LibraryTracker.Model.Crawler;
 import com.retchut.LibraryTracker.Model.Library;
 
 import java.io.IOException;
@@ -37,6 +39,7 @@ public class LibraryTracker {
                 System.out.println("2 - Add cards to the library.");
                 System.out.println("3 - Modify a card in the library.");
                 System.out.println("4 - Remove cards from the library.");
+                System.out.println("5 - Look up a specific card's value.");
                 System.out.println("0 - Exit and save the library.");
                 int input = scanner.nextInt();
                 scanner.nextLine();
@@ -58,6 +61,10 @@ public class LibraryTracker {
                         if(lib.removeCard(scanner) != 0)
                             System.out.println("The operation was canceled. No changes to the library were made. Try again.");
                         break;
+                    case 5:
+                        if(lookUpPrice(scanner) != 0)
+                            System.out.println("Operation error. Please try again.");
+                        break;
                     case 0:
                         System.out.println("The program will now exit, and your library will be saved.");
                         scanner.close();
@@ -72,6 +79,36 @@ public class LibraryTracker {
                 scanner.next();
             }
         }
+    }
+
+    private static int lookUpPrice(Scanner scanner){
+        String name, expansion;
+        //TODO: Clear console
+        try{
+            //Get card name
+            System.out.println("Please input the card's name, taking into account any possible alternate versions, if said versions exist.");
+            System.out.println("E.g.: \"The Winged Dragon of Ra (V.2 - Ghost Rare)\"");
+            name = scanner.nextLine();
+
+            //Get card expansion
+            System.out.println("Please input the card expansion:");
+            expansion = scanner.nextLine();
+        }
+        //TODO: find a better way to do this
+        catch(InputMismatchException e){
+            System.out.println("You must input a valid integer when asked to.");
+            return 1;
+        }
+        catch(IllegalArgumentException e){
+            System.out.println("That's not a valid value.");
+            return 1;
+        }
+
+        Crawler crawler = new Crawler(name, expansion);
+        System.out.println(name);
+        System.out.println("From: " + crawler.crawl());
+
+        return 0;
     }
 /*
     private static String osName = System.getProperty("os.name").toLowerCase();
