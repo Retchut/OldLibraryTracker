@@ -16,7 +16,9 @@ WIP (in sort of an order of priority, I guess idk):
 
 	-Looking up prices for all cards in the library;
 	-Maintaining a small local database of card prices;
+	-Adding bought card price
 	-Ordering cards by their locally stored price;
+	-Ordering cards by profit
 	-Fixing weird urls for old alternative card rarities in sets;
 	-Fix weird url for starlight rare alternative rarity cards;
 	-Detecting fluctuations in price;
