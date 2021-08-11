@@ -19,6 +19,10 @@ public class Library {
         this.collection = new ArrayList<>();
     }
 
+    public List<Card> getCollection(){
+        return this.collection;
+    }
+
     /**
      * @brief Loads library from file
      */
@@ -35,6 +39,7 @@ public class Library {
             String name, expansion, condition, language;
             boolean firstEd;
             int amount;
+            double price;
             List<Card> loadedCollection = new ArrayList<>();
             try{
                 while(fileReader.hasNextLine()){
@@ -44,8 +49,9 @@ public class Library {
                     language = fileReader.next();
                     firstEd = fileReader.nextBoolean();
                     amount = fileReader.nextInt();
+                    price = fileReader.nextDouble();
                     fileReader.nextLine();
-                    loadedCollection.add(new Card(name, expansion, Card.CONDITION.valueOf(condition), Card.LANGUAGE.valueOf(language), firstEd, amount));
+                    loadedCollection.add(new Card(name, expansion, Card.CONDITION.valueOf(condition), Card.LANGUAGE.valueOf(language), firstEd, amount, price));
                 }
             }
             catch(IllegalArgumentException e){
@@ -112,6 +118,7 @@ public class Library {
         Card.LANGUAGE language;
         boolean firstEd;
         int amount;
+        double price;
         //TODO: Clear console
         try{
             String input;
@@ -154,8 +161,14 @@ public class Library {
             System.out.println("Please input the number of copies you own:");
             amount = scanner.nextInt();
 
+            Crawler crawler = new Crawler(name, expansion);
+            double price = crawler.crawl()
+            if(price == 0.0){
+                System.out.println("Error fetching " + name + "(" + expansion + ")'s price. The price was set to 0.0.");
+            }
+
             //Create card
-            this.collection.add(new Card(name, expansion, condition, language, firstEd, amount));
+            this.collection.add(new Card(name, expansion, condition, language, firstEd, amount, price));
             System.out.println("A new card has been created with the given information and added to the library.");
         }
         //TODO: find a better way to do this

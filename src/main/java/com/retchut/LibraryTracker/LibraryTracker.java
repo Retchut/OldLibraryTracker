@@ -40,6 +40,7 @@ public class LibraryTracker {
                 System.out.println("3 - Modify a card in the library.");
                 System.out.println("4 - Remove cards from the library.");
                 System.out.println("5 - Look up a specific card's value.");
+		        System.out.println("6 - Update the price of all cards in the library.");
                 System.out.println("0 - Exit and save the library.");
                 int input = scanner.nextInt();
                 scanner.nextLine();
@@ -65,6 +66,10 @@ public class LibraryTracker {
                         if(lookUpPrice(scanner) != 0)
                             System.out.println("Operation error. Please try again.");
                         break;
+                    case 6:
+                        if(updatePrices(scanner) != 0)
+                            System.out.println("Operation error. Please try again.");
+                        break;
                     case 0:
                         System.out.println("The program will now exit, and your library will be saved.");
                         scanner.close();
@@ -81,7 +86,7 @@ public class LibraryTracker {
         }
     }
 
-    private static int lookUpPrice(Scanner scanner){
+    private Pair<String, String> getCardInfo(Scanner scanner){
         String name, expansion;
         //TODO: Clear console
         try{
@@ -96,13 +101,20 @@ public class LibraryTracker {
         }
         //TODO: find a better way to do this
         catch(InputMismatchException e){
-            System.out.println("You must input a valid integer when asked to.");
-            return 1;
+            System.out.println("Please input a correct value.");
+            return new Pair();
         }
         catch(IllegalArgumentException e){
             System.out.println("That's not a valid value.");
-            return 1;
+            return new Pair();
         }
+        return new Pair<String, String>(name, expansion);
+    }
+
+    private static int lookUpPrice(Scanner scanner){
+        Pair<String, String> cardInfo = getCardInfo(scanner);
+        String name = cardInfo.getKey();
+        String expansion = cardInfo.getValue();
 
         Crawler crawler = new Crawler(name, expansion);
         System.out.println(name);
@@ -110,6 +122,22 @@ public class LibraryTracker {
 
         return 0;
     }
+
+    private static int updatePrices(Scanner scanner){
+        List<Card> collection = library.getCollection();
+        for(Card card : collection){
+            Crawler crawler = new Crawler(name, expansion);
+            double newPrice = crawler.crawl()
+            if(newPrice == 0.0){
+                System.out.println("Error fetching " + name + "(" + expansion + ")'s price. No changes were made...");
+            }
+            else{
+                card.setPrice(crawler.crawl)
+            }
+        }
+    }
+
+
 /*
     private static String osName = System.getProperty("os.name").toLowerCase();
 

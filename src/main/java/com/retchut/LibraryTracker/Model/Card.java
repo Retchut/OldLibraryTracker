@@ -9,6 +9,7 @@ public class Card {
     private LANGUAGE language;
     private boolean firstEd;
     private int amount;
+    private double price;
 
     //Getters
     public String getName(){ return this.name; }
@@ -17,6 +18,7 @@ public class Card {
     public LANGUAGE getLanguage(){ return this.language; }
     public boolean getFirstEd(){ return this.firstEd; }
     public int getAmount(){ return this.amount; }
+    public int getPrice(){ return this.price; }
 
     //Setters
     public void setName(String newName){ this.name = newName; }
@@ -25,6 +27,7 @@ public class Card {
     public void setLanguage(LANGUAGE newLanguage){ this.language = newLanguage; }
     public void setFirstEd(boolean newFirstEd){ this.firstEd = newFirstEd; }
     public void setAmount(int newAmount) { this.amount = newAmount; }
+    public void setPrice(double newPrice) { this.price = newPrice; }
 
     enum CONDITION { M, NM, EX, GD, LP, PL, P}
     enum LANGUAGE {ENGLISH, FRENCH, GERMAN, SPANISH, ITALIAN, PORTUGUESE}
@@ -32,13 +35,14 @@ public class Card {
     /**
      * @brief Default constructor
      */
-    public Card(String name, String expansion, CONDITION condition, LANGUAGE language, boolean firstEd, int amount){
+    public Card(String name, String expansion, CONDITION condition, LANGUAGE language, boolean firstEd, int amount, double price){
         setName(name);
         setExpansion(expansion);
         setCondition(condition);
         setLanguage(language);
         setFirstEd(firstEd);
         setAmount(amount);
+        setPrice(price);
     }
 
     /**
@@ -52,6 +56,7 @@ public class Card {
         System.out.println("Language: " + getLanguage());
         System.out.println("Is First Ed: " + getFirstEd());
         System.out.println("Amount: " + getAmount());
+        System.out.println("Price : " + getPrice());
     }
 
     /**
