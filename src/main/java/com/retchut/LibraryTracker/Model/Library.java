@@ -91,7 +91,7 @@ public class Library {
             System.out.println("The library is empty.");
         }
         else{
-            System.out.println("Amount\t|\tExpansion\t|\tcom.retchut.LibraryTracker.Model.Card Name");
+            System.out.println("Amount\t|   Expansion\t|   Card Name");
             for(Card current : collection){
                 System.out.println(current.getAmount() + "\t|\t" + current.getExpansion() + "\t|\t" + current.getName());
             }
