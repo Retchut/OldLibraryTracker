@@ -162,7 +162,7 @@ public class Library {
             amount = scanner.nextInt();
 
             Crawler crawler = new Crawler(name, expansion);
-            double price = crawler.crawl()
+            price = crawler.crawl();
             if(price == 0.0){
                 System.out.println("Error fetching " + name + "(" + expansion + ")'s price. The price was set to 0.0.");
             }

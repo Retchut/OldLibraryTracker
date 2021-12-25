@@ -7,6 +7,8 @@ import com.retchut.LibraryTracker.Model.Library;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.List;
+import javafx.util.Pair;
 
 public class LibraryTracker {
 
@@ -67,7 +69,7 @@ public class LibraryTracker {
                             System.out.println("Operation error. Please try again.");
                         break;
                     case 6:
-                        if(updatePrices(scanner) != 0)
+                        if(updatePrices(lib, scanner) != 0)
                             System.out.println("Operation error. Please try again.");
                         break;
                     case 0:
@@ -123,16 +125,18 @@ public class LibraryTracker {
         return 0;
     }
 
-    private static int updatePrices(Scanner scanner){
-        List<Card> collection = library.getCollection();
+    private static int updatePrices(Library lib, Scanner scanner){
+        List<Card> collection = lib.getCollection();
         for(Card card : collection){
+            String name = card.getName();
+            String expansion = card.getExpansion();
             Crawler crawler = new Crawler(name, expansion);
-            double newPrice = crawler.crawl()
+            double newPrice = crawler.crawl();
             if(newPrice == 0.0){
                 System.out.println("Error fetching " + name + "(" + expansion + ")'s price. No changes were made...");
             }
             else{
-                card.setPrice(crawler.crawl)
+                card.setPrice(newPrice);
             }
         }
     }

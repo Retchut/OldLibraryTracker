@@ -18,7 +18,7 @@ public class Card {
     public LANGUAGE getLanguage(){ return this.language; }
     public boolean getFirstEd(){ return this.firstEd; }
     public int getAmount(){ return this.amount; }
-    public int getPrice(){ return this.price; }
+    public double getPrice(){ return this.price; }
 
     //Setters
     public void setName(String newName){ this.name = newName; }
