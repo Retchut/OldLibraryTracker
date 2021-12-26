@@ -9,27 +9,33 @@ public class CrawlerTest {
     @Test
     void testCrawler1(){
         String name = "Tatsunoko";
+        int version = 0;
+        String rarity = "Super Rare";
         String expansion = "HISU";
 
-        Crawler crawler = new Crawler(name, expansion);
-        Assertions.assertEquals(crawler.crawl(), 0.02, 0.02);
+        Crawler crawler = new Crawler(new CardInfo(name, version, rarity, expansion));
+        Assertions.assertEquals(0.02, crawler.crawl(), 0.02);
     }
 
     @Test
     void testCrawler2(){
         String name = "Knightmare Unicorn (V.1 - Rare)";
+        int version = 1;
+        String rarity = "Rare";
         String expansion = "GEIM";
 
-        Crawler crawler = new Crawler(name, expansion);
-        Assertions.assertEquals(crawler.crawl(), 0.13, 0.10);
+        Crawler crawler = new Crawler(new CardInfo(name, version, rarity, expansion));
+        Assertions.assertEquals(0.02, crawler.crawl(), 0.02);
     }
 
     @Test
     void testCrawler3(){
-        String name = "The Winged Dragon of Ra (V.2 - Ghost Rare)";
+        String name = "The Winged Dragon of Ra";
+        int version = 2;
+        String rarity = "Ghost Rare";
         String expansion = "LED7";
 
-        Crawler crawler = new Crawler(name, expansion);
-        Assertions.assertEquals(crawler.crawl(), 200, 50);
+        Crawler crawler = new Crawler(new CardInfo(name, version, rarity, expansion));
+        Assertions.assertEquals(180, crawler.crawl(), 50);
     }
 }
