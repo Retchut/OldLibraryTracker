@@ -3,10 +3,12 @@ package com.retchut.LibraryTracker;
 import com.retchut.LibraryTracker.Model.Card;
 import com.retchut.LibraryTracker.Model.Crawler;
 import com.retchut.LibraryTracker.Model.Library;
+import com.retchut.LibraryTracker.Model.CardInfo;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.List;
 
 public class LibraryTracker {
 
@@ -18,17 +20,17 @@ public class LibraryTracker {
             //Load library
             lib.loadLibrary();
 
-            trackerLoop(lib);
+            boolean save = trackerLoop(lib);
 
             //Save library
-            lib.saveLibrary();
+            if(save) lib.saveLibrary();
         }
         catch (IOException e){
             e.printStackTrace();
         }
     }
 
-    private static void trackerLoop(Library lib){
+    private static boolean trackerLoop(Library lib){
         Scanner scanner = new Scanner(System.in);
         while(true){
             try{
@@ -40,6 +42,9 @@ public class LibraryTracker {
                 System.out.println("3 - Modify a card in the library.");
                 System.out.println("4 - Remove cards from the library.");
                 System.out.println("5 - Look up a specific card's value.");
+		        System.out.println("6 - Update the price of all cards in the library.");
+                System.out.println();
+                System.out.println("9 - Exit without saving the library.");
                 System.out.println("0 - Exit and save the library.");
                 int input = scanner.nextInt();
                 scanner.nextLine();
@@ -65,12 +70,20 @@ public class LibraryTracker {
                         if(lookUpPrice(scanner) != 0)
                             System.out.println("Operation error. Please try again.");
                         break;
+                    case 6:
+                        if(updatePrices(lib, scanner) != 0)
+                            System.out.println("Operation error. Please try again.");
+                        break;
+                    case 9:
+                        System.out.println("The program will now exit. No changes to the library were made.");
+                        scanner.close();
+                        return false;
                     case 0:
                         System.out.println("The program will now exit, and your library will be saved.");
                         scanner.close();
-                        return;
+                        return true;
                     default:
-                        System.out.println("Please input an integer from 0-4.");
+                        System.out.println("Please input a valid integer.");
 
                 }
             }
@@ -81,35 +94,80 @@ public class LibraryTracker {
         }
     }
 
-    private static int lookUpPrice(Scanner scanner){
-        String name, expansion;
+    private static CardInfo getCardInfo(Scanner scanner){
+        CardInfo cardInfo = new CardInfo();
         //TODO: Clear console
         try{
+            String input = "";
+
             //Get card name
-            System.out.println("Please input the card's name, taking into account any possible alternate versions, if said versions exist.");
-            System.out.println("E.g.: \"The Winged Dragon of Ra (V.2 - Ghost Rare)\"");
-            name = scanner.nextLine();
+            System.out.println("Please input the name of the card you'd like to add.");
+            input = scanner.nextLine();
+            cardInfo.setName(input);
+
+            //Get card version number
+            System.out.println("If the card has any alternate versions in this set, please input the card's version number.");
+            System.out.println("If it does not, please input 0.");
+            int altVer = scanner.nextInt();
+            scanner.nextLine();
+            if(altVer < 0){
+                System.out.println("That is not a valid answer.");
+                return new CardInfo();
+            }
+            else if (altVer >= 0){
+                cardInfo.setVersion(altVer);
+            }
+            
+            //Get card rarity
+            System.out.println("Please input the rarity of the card.");
+            input = scanner.nextLine();
+            cardInfo.setRarity(input);
 
             //Get card expansion
             System.out.println("Please input the card expansion:");
-            expansion = scanner.nextLine();
+            input = scanner.nextLine();
+            cardInfo.setExpansion(input);
         }
         //TODO: find a better way to do this
         catch(InputMismatchException e){
-            System.out.println("You must input a valid integer when asked to.");
-            return 1;
+            System.out.println("Please input a correct value.");
+            return new CardInfo();
         }
         catch(IllegalArgumentException e){
             System.out.println("That's not a valid value.");
-            return 1;
+            return new CardInfo();
         }
+        return cardInfo;
+    }
 
-        Crawler crawler = new Crawler(name, expansion);
-        System.out.println(name);
+    private static int lookUpPrice(Scanner scanner){
+        CardInfo cardInfo = getCardInfo(scanner);
+
+        if(cardInfo.getName().equals("") && cardInfo.getExpansion().equals("")) return 1;
+
+        Crawler crawler = new Crawler(cardInfo);
+        System.out.println(cardInfo.getName());
         System.out.println("From: " + crawler.crawl());
 
         return 0;
     }
+
+    private static int updatePrices(Library lib, Scanner scanner){
+        List<Card> collection = lib.getCollection();
+        for(Card card : collection){
+            Crawler crawler = new Crawler(card.getCardInfo());
+            double newPrice = crawler.crawl();
+            if(newPrice == 0.0){
+                System.out.println("Error fetching " + card.getCardInfo().getName() + "(" + card.getCardInfo().getExpansion() + ")'s price. No changes were made...");
+            }
+            else{
+                card.setPrice(newPrice);
+            }
+        }
+        return 0;
+    }
+
+
 /*
     private static String osName = System.getProperty("os.name").toLowerCase();
 

@@ -92,6 +92,7 @@ DAMA,Dawn-of-Majesty
 //Starter, structure and Preconstructed decks
 //Taken from https://yugioh.fandom.com/wiki/Starter_Deck
 //TODO: add these
+YSKR,Starter-Deck-Kaiba-Reloaded
 //Expansion Packs
 //Taken from https://yugioh.fandom.com/wiki/Expansion_Pack
 //Booster SP / Deck Build Packs

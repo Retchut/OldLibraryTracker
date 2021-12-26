@@ -7,16 +7,17 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Crawler {
-    final private String url;
+    final private List<String> urls;
 
-    public Crawler(String name, String expansion){
+    public Crawler(CardInfo cardInfo){
         UrlBuilder urlBuilder = new UrlBuilder();
-        this.url = urlBuilder.buildUrl(name, expansion);
+        this.urls = urlBuilder.buildUrl(cardInfo);
     }
 
-    public double crawl(){
+    public double crawl(){        
         Document doc = request();
         if(doc == null)
             return 0.0;
@@ -43,14 +44,16 @@ public class Crawler {
 
     public Document request(){
         try{
-            Connection con = Jsoup.connect(this.url);
-            Document doc = con.get();
+            //Try to connect to all the possible urls
+            for(String url : this.urls){
+                Connection con = Jsoup.connect(url);
+                Document doc = con.get();
 
 
-            if(con.response().statusCode() == 200)  //successful response
-                return doc;
-            else
-                return null;
+                if(con.response().statusCode() == 200)  //successful response
+                    return doc;
+            }
+            return null;
         }
         catch(IOException e){
             return null;

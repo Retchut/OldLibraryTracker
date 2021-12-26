@@ -5,7 +5,10 @@ import com.retchut.LibraryTracker.Algorithms;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
 
 public class Library {
     File libraryFile;
@@ -17,6 +20,10 @@ public class Library {
     public Library(){
         this.libraryFile = new File("library.txt");
         this.collection = new ArrayList<>();
+    }
+
+    public List<Card> getCollection(){
+        return this.collection;
     }
 
     /**
@@ -32,24 +39,37 @@ public class Library {
             boolean success = true;
             Scanner fileReader = new Scanner(libraryFile);
             fileReader.useDelimiter("[|\\n]");
-            String name, expansion, condition, language;
+            String name, rarity, expansion, condition, language;
             boolean firstEd;
-            int amount;
+            int version, amount;
+            double price;
+            int line = 1;
             List<Card> loadedCollection = new ArrayList<>();
             try{
                 while(fileReader.hasNextLine()){
                     name = fileReader.next();
+                    version = fileReader.nextInt();
+                    rarity = fileReader.next();
                     expansion = fileReader.next();
                     condition = fileReader.next();
                     language = fileReader.next();
                     firstEd = fileReader.nextBoolean();
                     amount = fileReader.nextInt();
+                    price = fileReader.nextDouble();
                     fileReader.nextLine();
-                    loadedCollection.add(new Card(name, expansion, Card.CONDITION.valueOf(condition), Card.LANGUAGE.valueOf(language), firstEd, amount));
+                    loadedCollection.add(new Card(new CardInfo(name, version, rarity, expansion), Card.CONDITION.valueOf(condition), Card.LANGUAGE.valueOf(language), firstEd, amount, price));
+                    line++;
                 }
             }
             catch(IllegalArgumentException e){
-                System.out.println("That library file is invalid. No library was loaded.");
+                e.printStackTrace();
+                System.out.println("Line " + line + " of the library file is invalid. No library was loaded.");
+                success = false;
+                fileReader.close();
+            }
+            catch(InputMismatchException e){
+                e.printStackTrace();
+                System.out.println("Line " + line + " of the library file is invalid. No library was loaded.");
                 success = false;
                 fileReader.close();
             }
@@ -65,17 +85,21 @@ public class Library {
      */
     public void saveLibrary() throws IOException {
         FileWriter fileWriter = new FileWriter("library.txt");
-        String name, expansion, condition, language;
+        String name, rarity, expansion, condition, language;
         boolean firstEd;
-        int amount;
+        int version, amount;
+        double price;
         for(Card c : collection){
-            name = c.getName();
-            expansion = c.getExpansion();
+            name = c.getCardInfo().getName();
+            version = c.getCardInfo().getVersion();
+            rarity = c.getCardInfo().getRarity();
+            expansion = c.getCardInfo().getExpansion();
             condition = c.getCondition().name();
             language = c.getLanguage().name();
             firstEd = c.getFirstEd();
             amount = c.getAmount();
-            fileWriter.write(name + "|" + expansion + "|" + condition + "|" + language + "|" + firstEd + "|" + amount + "\n");
+            price = c.getPrice();
+            fileWriter.write(name + "|" + version + "|" + rarity + "|" + expansion + "|" + condition + "|" + language + "|" + firstEd + "|" + amount + "|" + price + "\n");
         }
         fileWriter.close();
     }
@@ -91,9 +115,9 @@ public class Library {
             System.out.println("The library is empty.");
         }
         else{
-            System.out.println("Amount\t|\tExpansion\t|\tcom.retchut.LibraryTracker.Model.Card Name");
+            System.out.println("Amount\t|   Expansion\t|   Card Name");
             for(Card current : collection){
-                System.out.println(current.getAmount() + "\t|\t" + current.getExpansion() + "\t|\t" + current.getName());
+                System.out.println(current.getAmount() + "\t|\t" + current.getCardInfo().getExpansion() + "\t|\t" + current.getCardInfo().getName());
             }
         }
         //TODO: find a better way to make this work
@@ -107,23 +131,43 @@ public class Library {
      * @return 0 on success, 1 otherwise
      */
     public int addCard(Scanner scanner){
-        String name, expansion;
+        CardInfo cardInfo = new CardInfo();
         Card.CONDITION condition;
         Card.LANGUAGE language;
         boolean firstEd;
         int amount;
+        double price;
         //TODO: Clear console
         try{
-            String input;
+            String input = "";
 
             //Get card name
-            System.out.println("Please input the name of the card you'd like to add, taking into account any possible alternate versions, if said versions exist:");
-            System.out.println("E.g.: \"The Winged Dragon of Ra (V.2 - Ghost Rare)\"");
-            name = scanner.nextLine();
+            System.out.println("Please input the name of the card you'd like to add.");
+            input = scanner.nextLine();
+            cardInfo.setName(input);
+
+            //Get card version number
+            System.out.println("If the card has any alternate versions in this set, please input the card's version number.");
+            System.out.println("If it does not, please input 0.");
+            int altVer = scanner.nextInt();
+            scanner.nextLine();
+            if(altVer < 0){
+                System.out.println("That is not a valid answer.");
+                return 1;
+            }
+            else if (altVer >= 0){
+                cardInfo.setVersion(altVer);
+            }
+            
+            //Get card rarity
+            System.out.println("Please input the rarity of the card.");
+            input = scanner.nextLine();
+            cardInfo.setRarity(input);
 
             //Get card expansion
             System.out.println("Please input the card expansion:");
-            expansion = scanner.nextLine();
+            input = scanner.nextLine();
+            cardInfo.setExpansion(input);
 
             //Get card condition
             System.out.println("Please input the condition of the card (M, NM, EX, GD, LP, PL or P):");
@@ -153,9 +197,16 @@ public class Library {
             //Get number of copies owned
             System.out.println("Please input the number of copies you own:");
             amount = scanner.nextInt();
+            scanner.nextLine();
+
+            Crawler crawler = new Crawler(cardInfo);
+            price = crawler.crawl();
+            if(price == 0.0){
+                System.out.println("Error fetching " + cardInfo.getName() + "(" + cardInfo.getExpansion() + ")'s price. The price was set to 0.0.");
+            }
 
             //Create card
-            this.collection.add(new Card(name, expansion, condition, language, firstEd, amount));
+            this.collection.add(new Card(cardInfo, condition, language, firstEd, amount, price));
             System.out.println("A new card has been created with the given information and added to the library.");
         }
         //TODO: find a better way to do this
@@ -183,7 +234,6 @@ public class Library {
             return 1;
         }
         else{
-            scanner = new Scanner(System.in);
             String name = scanner.nextLine();
             int pos = Algorithms.binarySearch(this.collection, 0, this.collection.size() - 1, name);
 
@@ -210,7 +260,7 @@ public class Library {
             return 1;
         }
         else{
-            scanner = new Scanner(System.in);
+            System.out.println("Please input the name of the card to be removed.");
             String name = scanner.nextLine();
             int pos = Algorithms.binarySearch(this.collection, 0, this.collection.size() - 1, name);
 

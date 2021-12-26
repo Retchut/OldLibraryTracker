@@ -27,6 +27,7 @@ final public class ExpansionMap {
                 expansions.put(expansionName, expansionURL);
                 fileReader.nextLine();
             }
+            fileReader.close();
         }
         catch (IOException e){
             throw new RuntimeException("Exception while initializing expansion map");

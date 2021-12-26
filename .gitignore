@@ -1,8 +1,10 @@
 .vscode
 .idea/
-.gradle/
+.gradle
+bin/
 out/
-build/
+**/build/
+!src/**/build/
 *.iml
 *.txt
 !expansions.txt
