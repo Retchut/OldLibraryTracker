@@ -115,9 +115,9 @@ public class Library {
             System.out.println("The library is empty.");
         }
         else{
-            System.out.println("Amount\t|   Expansion\t|   Card Name");
+            System.out.println("Amount\t| Price\t|   Expansion\t|\tCard Name");
             for(Card current : collection){
-                System.out.println(current.getAmount() + "\t|\t" + current.getCardInfo().getExpansion() + "\t|\t" + current.getCardInfo().getName());
+                System.out.println("   " + current.getAmount() + "\t| " + current.getPrice() + "\t|   " + current.getCardInfo().getExpansion() + "\t|\t" + current.getCardInfo().getName());
             }
         }
         //TODO: find a better way to make this work

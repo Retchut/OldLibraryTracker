@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 final public class ExpansionMap {
@@ -13,6 +14,7 @@ final public class ExpansionMap {
     static{
         expansions = new HashMap<>();
         File expansionsFile = new File("expansions.txt");
+        int line = 0;
         try{
             Scanner fileReader = new Scanner(expansionsFile);
             fileReader.useDelimiter("[,\\r\\n]");
@@ -20,16 +22,23 @@ final public class ExpansionMap {
             while(fileReader.hasNextLine()){
                 expansionName = fileReader.next();
                 if(expansionName.charAt(0) == '/'){
+                    line++;
                     fileReader.nextLine();
                     continue;
                 }
                 expansionURL = fileReader.next();
                 expansions.put(expansionName, expansionURL);
+                line++;
                 fileReader.nextLine();
             }
             fileReader.close();
         }
         catch (IOException e){
+            throw new RuntimeException("Exception while initializing expansion map");
+        }
+        catch (NoSuchElementException e){
+            System.out.println("Error reading expansion at line " + line);
+            e.printStackTrace();
             throw new RuntimeException("Exception while initializing expansion map");
         }
     }
