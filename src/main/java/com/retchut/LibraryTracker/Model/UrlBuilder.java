@@ -11,7 +11,7 @@ final public class UrlBuilder {
     private void buildUrlExpansion(String expansionKey){
         String expansion = ExpansionMap.getExpansion(expansionKey);
         if(expansion == "")
-            System.out.println("There's no such expansion");
+            System.out.println(expansionKey + ": There's no such expansion");
             //TODO: throw exception / return false and go back
         urlStart.append(expansion);
         urlStart.append('/');
