@@ -1,4 +1,4 @@
-package com.retchut.LibraryTracker.Model;
+package com.retchut.LibraryTracker;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;

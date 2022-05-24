@@ -1,9 +1,9 @@
 package com.retchut.LibraryTracker;
 
-import com.retchut.LibraryTracker.Model.Card;
-import com.retchut.LibraryTracker.Model.Crawler;
-import com.retchut.LibraryTracker.Model.Library;
-import com.retchut.LibraryTracker.Model.CardInfo;
+import com.retchut.LibraryTracker.Card;
+import com.retchut.LibraryTracker.Crawler;
+import com.retchut.LibraryTracker.Library;
+import com.retchut.LibraryTracker.CardInfo;
 
 import java.io.IOException;
 import java.util.InputMismatchException;

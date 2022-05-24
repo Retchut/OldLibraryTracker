@@ -1,4 +1,4 @@
-package com.retchut.LibraryTracker.Model;
+package com.retchut.LibraryTracker;
 
 import java.util.ArrayList;
 import java.util.Arrays;
