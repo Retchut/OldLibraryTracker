@@ -234,6 +234,7 @@ public class Library {
             return 1;
         }
         else{
+            System.out.println("Please input the name of the card you want to access.");
             String name = scanner.nextLine();
             int pos = Algorithms.binarySearch(this.collection, 0, this.collection.size() - 1, name);
 

@@ -148,6 +148,7 @@ public class Card {
                 System.out.println("1 - View card data.");
                 System.out.println("2 - Add copies of this card to the library.");
                 System.out.println("3 - Remove copies of this card from the library.");
+                System.out.println("4 - Update this card's price.");
                 System.out.println("0 - Go back.");
                 int input = scanner.nextInt();
                 scanner.nextLine();
@@ -164,6 +165,10 @@ public class Card {
                         if(this.removeCopies(scanner) != 0)
                             return 1;
                         break;
+                    case 4:
+                        if(this.updatePrice() != 0)
+                            return 1;
+                        break;
                     case 0:
                         return 0;
                     default:
@@ -174,6 +179,26 @@ public class Card {
                 System.out.println("You must input a valid integer.");
                 scanner.nextLine();
             }
+        }
+    }
+
+
+    /**
+     * @brief Modifies card's data
+     * @param scanner Scanner to read input
+     * @return 0 on success, 1 otherwise
+     */
+    public int updatePrice(){
+        CardInfo cardInfo = this.getCardInfo();
+        Crawler crawler = new Crawler(cardInfo);
+        double newPrice = crawler.crawl();
+        if(newPrice == 0.0){
+            System.out.println("Error fetching " + cardInfo.getName() + "(" + cardInfo.getExpansion() + ")'s price. No changes were made...");
+            return 1;
+        }
+        else{
+            this.setPrice(newPrice);
+            return 0;
         }
     }
 }

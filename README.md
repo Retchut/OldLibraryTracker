@@ -17,7 +17,6 @@ Implemented features:
 WIP (in sort of an order of priority, I guess idk):
 
 	-Search for cards (and display single card)
-	-Fetch a card's price through accessing the card
 	-Recording card price at a given time
 	-Ordering cards when viewing (or filtering results)
 	-Display constant number of cards, and "flip pages"

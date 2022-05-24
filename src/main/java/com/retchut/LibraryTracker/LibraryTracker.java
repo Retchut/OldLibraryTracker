@@ -71,8 +71,7 @@ public class LibraryTracker {
                             System.out.println("Operation error. Please try again.");
                         break;
                     case 6:
-                        if(updatePrices(lib, scanner) != 0)
-                            System.out.println("Operation error. Please try again.");
+                        updatePrices(lib, scanner);
                         break;
                     case 9:
                         System.out.println("The program will now exit. No changes to the library were made.");
@@ -152,19 +151,19 @@ public class LibraryTracker {
         return 0;
     }
 
-    private static int updatePrices(Library lib, Scanner scanner){
+    private static void updatePrices(Library lib, Scanner scanner){
         List<Card> collection = lib.getCollection();
         for(Card card : collection){
-            Crawler crawler = new Crawler(card.getCardInfo());
+            CardInfo cardInfo = card.getCardInfo();
+            Crawler crawler = new Crawler(cardInfo);
             double newPrice = crawler.crawl();
             if(newPrice == 0.0){
-                System.out.println("Error fetching " + card.getCardInfo().getName() + "(" + card.getCardInfo().getExpansion() + ")'s price. No changes were made...");
+                System.out.println("Error fetching " + cardInfo.getName() + "(" + cardInfo.getExpansion() + ")'s price. No changes were made...");
             }
             else{
                 card.setPrice(newPrice);
             }
         }
-        return 0;
     }
 
 
