@@ -1,11 +1,11 @@
-package com.retchut.LibraryTracker.Model;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
+package com.retchut.LibraryTracker;
 
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
+
 
 class UrlBuilderTest {
 
