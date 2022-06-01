@@ -155,13 +155,16 @@ public class LibraryTracker {
         List<Card> collection = lib.getCollection();
         for(Card card : collection){
             CardInfo cardInfo = card.getCardInfo();
+            System.out.print("Fetching " + cardInfo.getName() + "...\t");
             Crawler crawler = new Crawler(cardInfo);
             double newPrice = crawler.crawl();
             if(newPrice == 0.0){
                 System.out.println("Error fetching " + cardInfo.getName() + "(" + cardInfo.getExpansion() + ")'s price. No changes were made...");
+                System.out.println("Failure");
             }
             else{
                 card.setPrice(newPrice);
+                System.out.println("Success");
             }
         }
     }
