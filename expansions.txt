@@ -12,6 +12,7 @@ MFC,Magicians-Force
 DCR,Dark-Crisis
 IOC,Invasion-of-Chaos
 AST,Ancient-Sanctuary
+//
 //Series 4
 SOD,Soul-of-the-Duelist
 RSD,Rise-of-Destiny
@@ -21,6 +22,7 @@ CRV,Cybernetic-Revolution
 EEN,Elemental-Energy
 SOI,Shadow-of-Infinity
 EOJ,Enemy-of-Justice
+//
 //Series 5
 POTD,Power-of-the-Duelist
 CDIP,Cyberdark-Impact
@@ -30,6 +32,7 @@ TAEV,Tactical-Evolution
 GLAS,Gladiators-Assault
 PTDN,Phantom-Darkness
 LODT,Light-of-Destruction
+//
 //Series 6
 TDGS,The-Duelist-Genesis
 CSOC,Crossroads-of-Chaos
@@ -39,6 +42,7 @@ ANPR,Ancient-Prophecy
 SOVR,Stardust-Overdrive
 ABPF,Absolute-Powerforce
 TSHD,The-Shining-Darkness
+//
 //Series 7
 DREV,Duelist-Revolution
 STBL,Starstrike-Blast
@@ -48,6 +52,7 @@ GENF,Generation-Force
 PHSW,Photon-Shockwave
 ORCS,Order-of-Chaos
 GAOV,Galactic-Overlord
+//
 //Series 8
 REDU,Return-of-the-Duelist
 ABYR,Abyss-Rising
@@ -70,6 +75,7 @@ TDIL,The-Dark-Illusion
 INOV,Invasion-Vengeance
 RATE,Raging-Tempest
 MACR,Maximum-Crisis
+//
 //Series 10
 COTD,Code-of-the-Duelist
 CIBR,Circuit-Break
@@ -89,6 +95,12 @@ PHRA,Phantom-Rage
 BLVO,Blazing-Vortex
 LIOV,Lightning-Overdrive
 DAMA,Dawn-of-Majesty
+BODE,Burst-of-Destiny
+BACH,Battle-of-Chaos
+DIFO,Dimension-Force
+POTE,Power-of-the-Elements
+DABL,Darkwing-Blast
+//
 //Starter Decks
 //Taken from https://yugioh.fandom.com/wiki/Starter_Deck
 //TODO: complete this
