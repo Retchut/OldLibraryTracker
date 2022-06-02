@@ -104,10 +104,37 @@ DABL,Darkwing-Blast
 //Starter Decks
 //Taken from https://yugioh.fandom.com/wiki/Starter_Deck
 //TODO: complete this
+SDY,Starter-Deck-Yugi
+SDK,Starter-Deck-Kaiba
 SDJ,Starter-Deck-Joey
+SDP,Starter-Deck-Pegasus
+SYE,Starter-Deck-Yugi-Evolution
+SKE,Starter-Deck-Kaiba-Evolution
+YSD,Starter-Deck-GX-2006
+YSDJ,Starter-Deck-Jaden-Yuki
+YSDS,Starter-Deck-Syrus-Truesdale
+YSD2,Starter-Deck-2007
+5DS1,5D-s-Starter-Deck-2008
+5DS2,5D-s-Starter-Deck-2009
+5DS3,Starter-Deck-Duelist-Toolbox
+YS11,Starter-Deck-Dawn-of-the-Xyz
+YS12,Starter-Deck-Xyz-Symphony
+YS13,Super-Starter-V-for-Victory
+YSYR,Starter-Deck-Yugi-Reloaded
 YSKR,Starter-Deck-Kaiba-Reloaded
+YS14,Super-Starter-SpaceTime-Showdown
+YS15,2Player-Starter-Deck-Yuya-Declan
+YS16,Starter-Deck-Yuya
+YS17,Starter-Deck-Link-Strike
 YS18,Starter-Deck-Codebreaker
 EGS1,Egyptian-God-Deck-Slifer-the-Sky-Dragon
+EGO1,Egyptian-God-Deck-Obelisk-the-Tormentor
+SS01,Speed-Duel-Starter-Decks-Destiny-Masters
+SS02,Speed-Duel-Starter-Decks-Duelists-of-Tomorrow
+SS03,Speed-Duel-Starter-Deck-Ultimate-Predators
+SS04,Speed-Duel-Starter-Decks-Match-of-the-Millennium
+SS05,Speed-Duel-Starter-Decks-Twisted-Nightmares
+//
 //Structure Decks
 //Taken from https://yugioh.fandom.com/wiki/Structure_Deck
 //TODO: complete this
