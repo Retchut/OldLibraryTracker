@@ -250,8 +250,7 @@ DP11,Duelist-Pack-Crow
 DPBC,Duelist-Pack-Battle-City
 DPRP,Duelist-Pack-Rivals-of-the-Pharaoh
 DPDG,Duelist-Pack-Dimensional-Guardians
-//Legend Duelist    - OCG
-//TODO: complete this
+//Legend Duelist - OCG
 //Legendary Duelists
 LEDU,Legendary-Duelists
 LED2,Legendary-Duelists-Ancient-Millennium
@@ -261,9 +260,11 @@ LED5,Legendary-Duelists-Immortal-Destiny
 LED6,Legendary-Duelists-Magical-Hero
 LED7,Legendary-Duelists-Rage-of-Ra
 LED8,Legendary-Duelists-Synchro-Storm
+LED9,Legendary-Duelists-9
 //Legendary Duelists Compilations
 LDS1,Legendary-Duelists-Season-1
 LDS2,Legendary-Duelists-Season-2
+LDS3,Legendary-Duelists-Season-3
 //Expansion Packs - korean only
 //TODO: complete this
 //Extra Packs   - OCG
