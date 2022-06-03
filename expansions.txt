@@ -229,6 +229,8 @@ BLLR,Battles-of-Legend-Lights-Revenge
 BLRR,Battles-of-Legend-Relentless-Revenge
 BLHR,Battles-of-Legend-Heros-Revenge
 BLAR,Battles-of-Legend-Armageddon
+BROL,Brothers-of-Legend
+BLCR,Battles-of-Legend-Crystal-Revenge
 //TCG compilations
 DLCS,Dragons-of-Legend-The-Complete-Series
 //Demo Decks
