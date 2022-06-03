@@ -233,8 +233,6 @@ BROL,Brothers-of-Legend
 BLCR,Battles-of-Legend-Crystal-Revenge
 //TCG compilations
 DLCS,Dragons-of-Legend-The-Complete-Series
-//Demo Decks
-//TODO: complete this
 //Duelist Packs
 DP1,Duelist-Pack-Jaden-Yuki
 DP2,Duelist-Pack-Chazz-Princeton
