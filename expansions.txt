@@ -201,7 +201,6 @@ LEHD,Legendary-Hero-Decks
 //Taken from https://yugioh.fandom.com/wiki/Expansion_Pack
 //Booster SP / Deck Build Packs
 //OCG
-//TODO: complete this
 //TCG equivalents
 THSF,The-Secret-Forces
 HSRD,HighSpeed-Riders
@@ -216,6 +215,8 @@ MYFI,Mystic-Fighters
 SESL,Secret-Slayers
 GEIM,Genesis-Impact
 ANGU,Ancient-Guardians
+GRCR,The-Grand-Creators
+TAMA,Tactical-Masters
 //Collectors Packs / Collection Pack
 //OCG
 //TODO: complete this
