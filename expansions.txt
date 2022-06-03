@@ -287,8 +287,8 @@ HA05,Hidden-Arsenal-5
 HA06,Hidden-Arsenal-6
 HA07,Hidden-Arsenal-7
 HASE,Hidden-Arsenal-Special-Edition
-//Jump Festas   - OCG
-//TODO: complete this
+HAC1,Hidden-Arsenal-Chapter-1
+//Jump Festas - OCG
 //Mega Packs
 RYMP,Ra-Yellow-Mega-Pack
 LC01,Legendary-Collection
