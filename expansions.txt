@@ -266,9 +266,7 @@ LDS1,Legendary-Duelists-Season-1
 LDS2,Legendary-Duelists-Season-2
 LDS3,Legendary-Duelists-Season-3
 //Expansion Packs - korean only
-//TODO: complete this
-//Extra Packs   - OCG
-//TODO: complete this
+//Extra Packs - OCG
 //Gold Series
 GLD1,Gold-Series-1
 GLD2,Gold-Series-2
@@ -279,6 +277,7 @@ PGLD,Premium-Gold
 PGL2,Premium-Gold-2
 PGL3,Premium-Gold-Infinite-Gold
 MAGO,Maximum-Gold
+MGED,Maximum-Gold-El-Dorado
 //Hidden Arsenal
 HA01,Hidden-Arsenal
 HA02,Hidden-Arsenal-2
