@@ -62,6 +62,7 @@ JOTL,Judgment-of-the-Light
 SHSP,Shadow-Specters
 LVAL,Legacy-of-the-Valiant
 PRIO,Primal-Origin
+//
 //Series 9
 DUEA,Duelist-Alliance
 NECH,The-New-Challengers
@@ -103,7 +104,6 @@ DABL,Darkwing-Blast
 //
 //Starter Decks
 //Taken from https://yugioh.fandom.com/wiki/Starter_Deck
-//TODO: complete this
 SDY,Starter-Deck-Yugi
 SDK,Starter-Deck-Kaiba
 SDJ,Starter-Deck-Joey
@@ -134,10 +134,7 @@ SS02,Speed-Duel-Starter-Decks-Duelists-of-Tomorrow
 SS03,Speed-Duel-Starter-Deck-Ultimate-Predators
 SS04,Speed-Duel-Starter-Decks-Match-of-the-Millennium
 SS05,Speed-Duel-Starter-Decks-Twisted-Nightmares
-//
 //Structure Decks
-//Taken from https://yugioh.fandom.com/wiki/Structure_Deck
-//TODO: complete this
 SD1,Structure-Deck-Dragons-Roar
 SD2,Structure-Deck-Zombie-Madness
 SD3,Structure-Deck-Blaze-of-Destruction
@@ -192,15 +189,14 @@ SDFC,Structure-Deck-Freezing-Chains
 SDCS,Structure-Deck-Cyber-Strike
 SDAZ,Structure-Deck-Albaz-Strike
 SDLC,Structure-Deck-Legend-of-the-Crystal-Beasts
-//
 //Preconstructed/Other Decks
-//Taken from https://yugioh.fandom.com/wiki/Starter_Deck
 DUDE,Duel-Devastator
 NKRT,Noble-Knights-of-the-Round-Table-Box-Set
 YGLD,Yugis-Legendary-Decks
 LDK2,Legendary-Decks-II
 LEDD,Legendary-Dragon-Decks
 LEHD,Legendary-Hero-Decks
+//
 //Expansion Packs
 //Taken from https://yugioh.fandom.com/wiki/Expansion_Pack
 //Booster SP / Deck Build Packs
