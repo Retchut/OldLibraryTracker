@@ -138,16 +138,61 @@ SS05,Speed-Duel-Starter-Decks-Twisted-Nightmares
 //Structure Decks
 //Taken from https://yugioh.fandom.com/wiki/Structure_Deck
 //TODO: complete this
-SDBE,Structure-Deck-Saga-of-BlueEyes-White-Dragon
+SD1,Structure-Deck-Dragons-Roar
+SD2,Structure-Deck-Zombie-Madness
+SD3,Structure-Deck-Blaze-of-Destruction
+SD4,Structure-Deck-Fury-From-The-Deep
+SD5,Structure-Deck-Warriors-Triumph
+SD6,Structure-Deck-Spellcasters-Judgment
+SD7,Structure-Deck-Invincible-Fortress
+SD8,Structure-Deck-Lord-of-the-Storm
+SD9,Structure-Deck-Dinosaurs-Rage
+SD10,Structure-Deck-Machine-ReVolt
+SDRL,Structure-Deck-Rise-of-the-Dragon-Lords
+SDDE,Structure-Deck-The-Dark-Emperor
+SDDZ,Structure-Deck-Zombie-World
+SDSC,Structure-Deck-Spellcasters-Command
+SDWS,Structure-Deck-Warriors-Strike
+SDMM,Structure-Deck-Machina-Mayhem
+SDMA,Structure-Deck-Marik
+SDDL,Structure-Deck-Dragunity-Legion
+SDLS,Structure-Deck-Lost-Sanctuary
+SDGU,Structure-Deck-Gates-of-the-Underworld
+SDDC,Structure-Deck-Dragons-Collide
+SDWA,Structure-Deck-Samurai-Warlords
+SDRE,Structure-Deck-Realm-of-the-Sea-Emperor
+SDOK,Structure-Deck-Onslaught-of-the-Fire-Kings
+SDBE,Structure-Deck-Saga-of-Blue-Eyes-White-Dragon
+SDCR,Structure-Deck-Cyber-Dragon-Revolution
+SDLI,Structure-Deck-Realm-of-Light
+SDGR,Structure-Deck-Geargia-Rampage
+SDHS,Structure-Deck-HERO-Strike
 SDSE,Structure-Deck-Synchron-Extreme
 SDMP,Structure-Deck-Master-of-Pendulum
+SR01,Structure-Deck-Emperor-of-Darkness
 SR02,Structure-Deck-Rise-of-the-True-Dragons
+SDYM,Structure-Deck-Yugi-Muto
+SDKS,Structure-Deck-Seto-Kaiba
 SDPD,Structure-Deck-Pendulum-Domination
+SR03,Structure-Deck-Machine-Reactor
 SR04,Structure-Deck-Dinosmashers-Fury
+SDCL,Structure-Deck-Cyberse-Link
+SR05,Structure-Deck-Wave-of-Light
+SR06,Structure-Deck-Lair-of-Darkness
+SDPL,Structure-Deck-Powercode-Link
+SR07,Structure-Deck-Zombie-Horde
 SDSB,Structure-Deck-Soulburner
 SR08,Structure-Deck-Order-of-the-Spellcasters
-SDPL,Structure-Deck-Powercode-Link
-SDSH,Structure-Deck-Shaddoll-Showdown
+SDRR,Structure-Deck-Rokket-Revolt
+SDSH,Structure-Deck-Shadoll-Showdown
+SR10,Structure-Deck-Mechanized-Madness
+SDSA,Structure-Deck-Sacred-Beasts
+SDCH,Structure-Deck-Spirit-Charmers
+SDFC,Structure-Deck-Freezing-Chains
+SDCS,Structure-Deck-Cyber-Strike
+SDAZ,Structure-Deck-Albaz-Strike
+SDLC,Structure-Deck-Legend-of-the-Crystal-Beasts
+//
 //Preconstructed/Other Decks
 //Taken from https://yugioh.fandom.com/wiki/Starter_Deck
 DUDE,Duel-Devastator
