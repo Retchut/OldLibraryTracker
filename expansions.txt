@@ -382,8 +382,14 @@ OP19,OTS-Tournament-Pack-19
 //
 //Duel Terminals
 //Taken from: https://yugioh.fandom.com/wiki/Template:Duel_Terminals
-//TODO: Complete this
+DTP1,Duel-Terminal-Preview
+DT01,Duel-Terminal-1
+DT02,Duel-Terminal-2
 DT03,Duel-Terminal-3
+DT04,Duel-Terminal-4
+DT05,Duel-Terminal-5
+DT06,Duel-Terminal-6
+DT07,Duel-Terminal-7
 //Reprint sets
 //Taken from: https://yugioh.fandom.com/wiki/Template:Reprint_sets
 //TODO: Complete this
