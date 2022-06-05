@@ -302,6 +302,19 @@ LC05,Legendary-Collection-5Ds
 LC5D,Legendary-Collection-5Ds-Mega-Pack
 LC06,Legendary-Collection-Kaiba
 LCKC,Legendary-Collection-Kaiba-Mega-Pack
+//Mega Tins
+CT1,Collectors-Tins-2004
+CT2,Collectors-Tins-2005
+CT03,Collectors-Tins-2006
+CT04,Collectors-Tins-2007
+CT05,Collectors-Tins-2008
+CT06,Collectors-Tins-2009
+DPCT,Duelist-Pack-Collection-Tin-2010
+CT07,Collectors-Tins-2010
+CT08,Collectors-Tins-2011
+CT09,Collectors-Tins-2012
+CT10,Collectors-Tins-2013
+ZTIN,2013-Zexal-Collection-Tin
 CT11,2014-MegaTins
 MP14,2014-MegaTin-MegaPack
 CT12,2015-MegaTins
@@ -315,6 +328,7 @@ MP18,2018-MegaTin-Mega-Pack
 TN19,2019-Gold-Sarcophagus-Tin
 MP19,2019-Gold-Sarcophagus-Tin-Mega-Pack
 MP20,2020-Tin-of-Lost-Memories-Mega-Pack
+MP21,2021-Tin-of-Ancient-Battles
 //Tournament Packs
 //Taken from: https://yugioh.fandom.com/wiki/Tournament_Pack
 //TODO: Complete this
