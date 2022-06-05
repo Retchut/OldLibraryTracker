@@ -134,6 +134,7 @@ SS02,Speed-Duel-Starter-Decks-Duelists-of-Tomorrow
 SS03,Speed-Duel-Starter-Deck-Ultimate-Predators
 SS04,Speed-Duel-Starter-Decks-Match-of-the-Millennium
 SS05,Speed-Duel-Starter-Decks-Twisted-Nightmares
+//
 //Structure Decks
 SD1,Structure-Deck-Dragons-Roar
 SD2,Structure-Deck-Zombie-Madness
@@ -189,6 +190,7 @@ SDFC,Structure-Deck-Freezing-Chains
 SDCS,Structure-Deck-Cyber-Strike
 SDAZ,Structure-Deck-Albaz-Strike
 SDLC,Structure-Deck-Legend-of-the-Crystal-Beasts
+//
 //Preconstructed/Other Decks
 DUDE,Duel-Devastator
 NKRT,Noble-Knights-of-the-Round-Table-Box-Set
@@ -200,7 +202,9 @@ LEHD,Legendary-Hero-Decks
 //Expansion Packs
 //Taken from https://yugioh.fandom.com/wiki/Expansion_Pack
 //Booster SP / Deck Build Packs
+//
 //OCG
+//
 //TCG equivalents
 THSF,The-Secret-Forces
 HSRD,HighSpeed-Riders
@@ -217,9 +221,10 @@ GEIM,Genesis-Impact
 ANGU,Ancient-Guardians
 GRCR,The-Grand-Creators
 TAMA,Tactical-Masters
+//
 //Collectors Packs / Collection Pack
 //OCG
-//TODO: complete this
+//
 //TCG equivalents
 NUMH,Number-Hunters
 DRLG,Dragons-of-Legend
@@ -231,8 +236,10 @@ BLHR,Battles-of-Legend-Heros-Revenge
 BLAR,Battles-of-Legend-Armageddon
 BROL,Brothers-of-Legend
 BLCR,Battles-of-Legend-Crystal-Revenge
+//
 //TCG compilations
 DLCS,Dragons-of-Legend-The-Complete-Series
+//
 //Duelist Packs
 DP1,Duelist-Pack-Jaden-Yuki
 DP2,Duelist-Pack-Chazz-Princeton
@@ -250,7 +257,9 @@ DP11,Duelist-Pack-Crow
 DPBC,Duelist-Pack-Battle-City
 DPRP,Duelist-Pack-Rivals-of-the-Pharaoh
 DPDG,Duelist-Pack-Dimensional-Guardians
+//
 //Legend Duelist - OCG
+//
 //Legendary Duelists
 LEDU,Legendary-Duelists
 LED2,Legendary-Duelists-Ancient-Millennium
@@ -261,12 +270,16 @@ LED6,Legendary-Duelists-Magical-Hero
 LED7,Legendary-Duelists-Rage-of-Ra
 LED8,Legendary-Duelists-Synchro-Storm
 LED9,Legendary-Duelists-9
+//
 //Legendary Duelists Compilations
 LDS1,Legendary-Duelists-Season-1
 LDS2,Legendary-Duelists-Season-2
 LDS3,Legendary-Duelists-Season-3
+//
 //Expansion Packs - korean only
+//
 //Extra Packs - OCG
+//
 //Gold Series
 GLD1,Gold-Series-1
 GLD2,Gold-Series-2
@@ -278,6 +291,7 @@ PGL2,Premium-Gold-2
 PGL3,Premium-Gold-Infinite-Gold
 MAGO,Maximum-Gold
 MGED,Maximum-Gold-El-Dorado
+//
 //Hidden Arsenal
 HA01,Hidden-Arsenal
 HA02,Hidden-Arsenal-2
@@ -288,7 +302,9 @@ HA06,Hidden-Arsenal-6
 HA07,Hidden-Arsenal-7
 HASE,Hidden-Arsenal-Special-Edition
 HAC1,Hidden-Arsenal-Chapter-1
+//
 //Jump Festas - OCG
+//
 //Mega Packs
 RYMP,Ra-Yellow-Mega-Pack
 LC01,Legendary-Collection
@@ -302,6 +318,7 @@ LC05,Legendary-Collection-5Ds
 LC5D,Legendary-Collection-5Ds-Mega-Pack
 LC06,Legendary-Collection-Kaiba
 LCKC,Legendary-Collection-Kaiba-Mega-Pack
+//
 //Mega Tins
 CT1,Collectors-Tins-2004
 CT2,Collectors-Tins-2005
@@ -329,17 +346,40 @@ TN19,2019-Gold-Sarcophagus-Tin
 MP19,2019-Gold-Sarcophagus-Tin-Mega-Pack
 MP20,2020-Tin-of-Lost-Memories-Mega-Pack
 MP21,2021-Tin-of-Ancient-Battles
+//
 //Tournament Packs
-//Taken from: https://yugioh.fandom.com/wiki/Tournament_Pack
-//TODO: Complete this
+//Taken from: https://yugioh.fandom.com/wiki/OTS_Tournament_Pack
+TP1,Tournament-Pack-1
+TP2,Tournament-Pack-2
+TP3,Tournament-Pack-3
+TP4,Tournament-Pack-4
+TP5,Tournament-Pack-5
+TP6,Tournament-Pack-6
 TP7,Tournament-Pack-7
+TP8,Tournament-Pack-8
+//
 //OTS Tournament Packs
-//Taken from: https://yugioh.fandom.com/wiki/OTS_Tournament_Pack?so=search
-//TODO: Complete this
+//
+OP01,OTS-Tournament-Pack-1
+OP02,OTS-Tournament-Pack-2
+OP03,OTS-Tournament-Pack-3
+OP04,OTS-Tournament-Pack-4
 OP05,OTS-Tournament-Pack-5
+OP06,OTS-Tournament-Pack-6
 OP07,OTS-Tournament-Pack-7
 OP08,OTS-Tournament-Pack-8
+OP09,OTS-Tournament-Pack-9
+OP10,OTS-Tournament-Pack-10
+OP11,OTS-Tournament-Pack-11
 OP12,OTS-Tournament-Pack-12
+OP13,OTS-Tournament-Pack-13
+OP14,OTS-Tournament-Pack-14
+OP15,OTS-Tournament-Pack-15
+OP16,OTS-Tournament-Pack-16
+OP17,OTS-Tournament-Pack-17
+OP18,OTS-Tournament-Pack-18
+OP19,OTS-Tournament-Pack-19
+//
 //Duel Terminals
 //Taken from: https://yugioh.fandom.com/wiki/Template:Duel_Terminals
 //TODO: Complete this
