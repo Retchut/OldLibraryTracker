@@ -391,9 +391,14 @@ DT05,Duel-Terminal-5
 DT06,Duel-Terminal-6
 DT07,Duel-Terminal-7
 //Reprint sets
-//Taken from: https://yugioh.fandom.com/wiki/Template:Reprint_sets
-//TODO: Complete this
+DB1,Dark-Beginning-1
+DB2,Dark-Beginning-2
+DR1,Dark-Revelation-1
+DR2,Dark-Revelation-2
+DR3,Dark-Revelation-3
+DR04,Dark-Revelation-4
 RP01,Retro-Pack
+RP02,Retro-Pack-2
 DLG1,Dark-Legends
 //Movie Packs
 MOV,YuGiOh-The-Movie
