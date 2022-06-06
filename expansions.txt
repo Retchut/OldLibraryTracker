@@ -160,7 +160,7 @@ SDDC,Structure-Deck-Dragons-Collide
 SDWA,Structure-Deck-Samurai-Warlords
 SDRE,Structure-Deck-Realm-of-the-Sea-Emperor
 SDOK,Structure-Deck-Onslaught-of-the-Fire-Kings
-SDBE,Structure-Deck-Saga-of-Blue-Eyes-White-Dragon
+SDBE,Structure-Deck-Saga-of-BlueEyes-White-Dragon
 SDCR,Structure-Deck-Cyber-Dragon-Revolution
 SDLI,Structure-Deck-Realm-of-Light
 SDGR,Structure-Deck-Geargia-Rampage
