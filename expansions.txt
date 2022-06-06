@@ -400,26 +400,35 @@ DR04,Dark-Revelation-4
 RP01,Retro-Pack
 RP02,Retro-Pack-2
 DLG1,Dark-Legends
+//
 //Movie Packs
 MOV,YuGiOh-The-Movie
 YMP1,3D-Bonds-Beyond-Time-Movie-Pack
 MVP1,The-Dark-Side-of-Dimensions-Movie-Pack
+//
 //Power-Up Packs / Enhancement Packs    - OCG
-//TODO: complete this
 //Premium Packs
 PP01,Premium-Pack-1-Booster
 PP02,Premium-Pack-2-Booster
+//
 //Promotion Packs   - OCG
-//TODO: complete this
 //Special Packs - OCG
-//TODO: complete this
 //Star Packs
 SP13,Star-Pack-2013
 SP14,Star-Pack-2014
 SP15,Star-Pack-Arc-V-Booster
 SP17,Star-Pack-Battle-Royal
 SP18,Star-Pack-VRAINS
+//
 //Speed Duel Booster Packs
+SBLS,Arena-of-Lost-Souls
+SBAD,Attack-from-the-Deep
+SBSC,Scars-of-Battle
+SBTK,Speed-Duel-Trials-of-the-Kingdom
+STP1,Speed-Duel-Tournament-Pack-1
+STP2,Speed-Duel-Tournament-Pack-2
+STP3,Speed-Duel-Tournament-Pack-3
+//
 //Other
 YAP1,Anniversary-Pack
 EP1,Exclusive-Pack-1
