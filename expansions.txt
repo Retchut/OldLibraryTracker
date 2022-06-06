@@ -432,22 +432,33 @@ STP3,Speed-Duel-Tournament-Pack-3
 //Other
 YAP1,Anniversary-Pack
 EP1,Exclusive-Pack-1
+//
 //OCG
-//TODO: complete this
 //TCG
+//Collector Boxes
 DUSA,Duelist-Saga
 DUPO,Duel-Power
 DUOV,Duel-Overload
+//
+//60 card Sets
 PEVO,Pendulum-Evolution
 SHVA,Shadows-in-Valhalla
 FIGA,Fists-of-the-Gadgets
 TOCH,Toon-Chaos
+KICO,Kings-Court
+//
+//Ghosts From the Past
 GFTP,Ghosts-From-the-Past
+GFP2,2022-Ghosts-From-the-Past
+//
+//Millenium pack
 MIL1,Millennium-Pack
 TKN1,Token-Promos-1
 TKN2,Token-Promos-2
 TKN3,Token-Promos-3
 TKN4,Token-Promos-4
+//
+//World Championship Packs
 WC4,World-Championship-2004
 WC5,World-Championship-2005
 WC6,World-Championship-2006
@@ -455,4 +466,6 @@ WC07,World-Championship-2007
 WC08,World-Championship-2008
 WCPP,World-Championship-2010-Card-Pack
 WC11,World-Championship-2011-Card-Pack
+WQ11,World-Championship-Qualifier-2011-Promos
+WCCP,World-Championship-Celebration-Promos
 WSUP,World-Superstars
