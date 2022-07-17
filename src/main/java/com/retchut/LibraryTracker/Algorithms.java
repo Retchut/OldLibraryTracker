@@ -41,6 +41,19 @@ final public class Algorithms {
         return -1;
     }
 
+    public static void log(String toLog){
+        try {
+            File myObj = new File("log.txt");
+            myObj.createNewFile();
+            FileWriter myWriter = new FileWriter("log.txt", true);
+            myWriter.write(toLog + "\n");
+            myWriter.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
     public static String padString(String toPad, int length){
         StringBuilder stringBuilder = new StringBuilder(toPad);
         if(toPad.length() >= length){
