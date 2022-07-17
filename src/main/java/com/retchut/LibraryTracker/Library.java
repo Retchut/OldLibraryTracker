@@ -12,9 +12,9 @@ public class Library {
     List<Card> collection;
 
     Comparator<Card> cardNameComparator = Comparator.comparing(Card::getCardName);
+    Comparator<Card> cardPriceComparator = Comparator.comparing(Card::getPrice);
     Comparator<Card> cardExpansionComparator = Comparator.comparing(Card::getCardExpansion);
     Comparator<Card> cardRarityComparator = Comparator.comparing(Card::getCardRarity);
-    Comparator<Card> cardPriceComparator = Comparator.comparing(Card::getPrice);
 
     /**
      * @brief Default constructor
@@ -113,18 +113,23 @@ public class Library {
     public void printLib(Scanner scanner){
         try {
             System.out.println("Which field do you want to sort by?");
-            System.out.println("1 - Name");
-            System.out.println("2 - Expansion");
-            System.out.println("3 - Rarity");
-            System.out.println("4 - Price");
+            System.out.println("1 - Name (Asc)");
+            System.out.println("2 - Name (Desc)");
+            System.out.println("3 - Price (Asc)");
+            System.out.println("4 - Price (Desc)");
+            System.out.println("5 - Expansion (Asc)");
+            System.out.println("6 - Expansion (Desc)");
+            System.out.println("7 - Rarity");
             int input = scanner.nextInt();
             scanner.nextLine();
             System.out.println();
-            sortLibrary(input);
+            if(sortLibrary(input) != 0){
+                throw new InputMismatchException();
+            }
         }
         catch(InputMismatchException e){
-            System.out.println("That's not a valid option. Sorting by name");
-            scanner.next();
+            System.out.println("That's not a valid option. Sorting by name.");
+            scanner.nextLine();
             collection.sort(cardNameComparator);
         }
 
@@ -312,13 +317,22 @@ public class Library {
                 collection.sort(cardNameComparator);
                 break;
             case 2:
-                collection.sort(cardExpansionComparator);
+                collection.sort(cardNameComparator.reversed());
                 break;
             case 3:
-                collection.sort(cardRarityComparator);
+                collection.sort(cardPriceComparator);
                 break;
             case 4:
-                collection.sort(cardPriceComparator);
+                collection.sort(cardPriceComparator.reversed());
+                break;
+            case 5:
+                collection.sort(cardExpansionComparator);
+                break;
+            case 6:
+                collection.sort(cardExpansionComparator.reversed());
+                break;
+            case 7:
+                collection.sort(cardRarityComparator);
                 break;
             default:
                 return 1;
