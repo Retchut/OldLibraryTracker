@@ -2,6 +2,9 @@ package com.retchut.LibraryTracker;
 
 import com.retchut.LibraryTracker.Card;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 final public class Algorithms {
@@ -36,5 +39,27 @@ final public class Algorithms {
 
         //in case something goes wrong
         return -1;
+    }
+
+    public static String padString(String toPad, int length){
+        StringBuilder stringBuilder = new StringBuilder(toPad);
+        if(toPad.length() >= length){
+            stringBuilder.insert(0, " ");
+            return stringBuilder.toString();
+        }
+
+        stringBuilder.append(" ");
+        Boolean prepended = false;
+        while(stringBuilder.length() < length){
+            if(prepended){
+                stringBuilder.append(" ");
+            }
+            else{
+                stringBuilder.insert(0, " ");
+            }
+            prepended = !prepended;
+        }
+
+        return stringBuilder.toString();
     }
 }

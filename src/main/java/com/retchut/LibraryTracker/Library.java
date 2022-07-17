@@ -5,14 +5,16 @@ import com.retchut.LibraryTracker.Algorithms;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Library {
     File libraryFile;
     List<Card> collection;
+
+    Comparator<Card> cardNameComparator = Comparator.comparing(Card::getCardName);
+    Comparator<Card> cardExpansionComparator = Comparator.comparing(Card::getCardExpansion);
+    Comparator<Card> cardRarityComparator = Comparator.comparing(Card::getCardRarity);
+    Comparator<Card> cardPriceComparator = Comparator.comparing(Card::getPrice);
 
     /**
      * @brief Default constructor
@@ -109,6 +111,23 @@ public class Library {
      * @param scanner Scanner to read input
      */
     public void printLib(Scanner scanner){
+        try {
+            System.out.println("Which field do you want to sort by?");
+            System.out.println("1 - Name");
+            System.out.println("2 - Expansion");
+            System.out.println("3 - Rarity");
+            System.out.println("4 - Price");
+            int input = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println();
+            sortLibrary(input);
+        }
+        catch(InputMismatchException e){
+            System.out.println("That's not a valid option. Sorting by name");
+            scanner.next();
+            collection.sort(cardNameComparator);
+        }
+
         //TODO: Clear console
         //check if the collection is empty
         if(this.collection.isEmpty()){
@@ -275,5 +294,25 @@ public class Library {
                 return 0;
             }
         }
+    }
+
+    private int sortLibrary(int choice){
+        switch(choice){
+            case 1:
+                collection.sort(cardNameComparator);
+                break;
+            case 2:
+                collection.sort(cardExpansionComparator);
+                break;
+            case 3:
+                collection.sort(cardRarityComparator);
+                break;
+            case 4:
+                collection.sort(cardPriceComparator);
+                break;
+            default:
+                return 1;
+        }
+        return 0;
     }
 }

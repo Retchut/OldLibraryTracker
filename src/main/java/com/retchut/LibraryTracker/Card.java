@@ -13,6 +13,9 @@ public class Card {
 
     //Getters
     public CardInfo getCardInfo(){ return this.cardInfo; }
+    public String getCardName(){ return this.cardInfo.getName(); }
+    public String getCardExpansion(){ return this.cardInfo.getExpansion(); }
+    public String getCardRarity(){ return this.cardInfo.getRarity(); }
     public CONDITION getCondition(){ return this.condition; }
     public LANGUAGE getLanguage(){ return this.language; }
     public boolean getFirstEd(){ return this.firstEd; }
@@ -200,5 +203,14 @@ public class Card {
             this.setPrice(newPrice);
             return 0;
         }
+    }
+
+    /**
+     * @brief Default card comparison
+     * @param other
+     * @return Comparison by name
+     */
+    public int compareTo(Card other){
+        return this.getCardName().compareTo(other.getCardName());
     }
 }

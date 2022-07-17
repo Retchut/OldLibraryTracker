@@ -83,7 +83,6 @@ public class LibraryTracker {
                         return true;
                     default:
                         System.out.println("Please input a valid integer.");
-
                 }
             }
             catch(InputMismatchException e){
