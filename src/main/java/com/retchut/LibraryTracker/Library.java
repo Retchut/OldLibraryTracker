@@ -134,9 +134,19 @@ public class Library {
             System.out.println("The library is empty.");
         }
         else{
-            System.out.println("Amount\t| Price\t|   Expansion\t|\tCard Name");
+            String amStr = " Amount ";
+            String prStr = "  Price  ";
+            String expStr = " Expansion ";
+            String rarStr = "    Rarity    ";
+            String naStr  = " Card Name ";
+            System.out.println(amStr + "|" + prStr + "|" + expStr + "|" + rarStr + "|" + naStr);
             for(Card current : collection){
-                System.out.println("   " + current.getAmount() + "\t| " + current.getPrice() + "\t|   " + current.getCardInfo().getExpansion() + "\t|\t" + current.getCardInfo().getName());
+                System.out.println(
+                        Algorithms.padString(String.valueOf(current.getAmount()),  amStr.length())  + "|"
+                                + Algorithms.padString(String.valueOf(current.getPrice()), prStr.length())  + "|"
+                                + Algorithms.padString(current.getCardExpansion(),         expStr.length()) + "|"
+                                + Algorithms.padString(current.getCardRarity(),            rarStr.length()) + "|"
+                                + Algorithms.padString(current.getCardName(),              0));
             }
         }
         //TODO: find a better way to make this work
