@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class Library {
+    final int PRINT_MAX_ELEMENTS = 20;
+
     File libraryFile;
     List<Card> collection;
 
@@ -139,24 +141,68 @@ public class Library {
             System.out.println("The library is empty.");
         }
         else{
-            String amStr = " Amount ";
-            String prStr = "  Price  ";
-            String expStr = " Expansion ";
-            String rarStr = "    Rarity    ";
-            String naStr  = " Card Name ";
-            System.out.println(amStr + "|" + prStr + "|" + expStr + "|" + rarStr + "|" + naStr);
-            for(Card current : collection){
-                System.out.println(
-                        Algorithms.padString(String.valueOf(current.getAmount()),  amStr.length())  + "|"
-                                + Algorithms.padString(String.valueOf(current.getPrice()), prStr.length())  + "|"
-                                + Algorithms.padString(current.getCardExpansion(),         expStr.length()) + "|"
-                                + Algorithms.padString(current.getCardRarity(),            rarStr.length()) + "|"
-                                + Algorithms.padString(current.getCardName(),              0));
-            }
+            int itemsToDisplay = PRINT_MAX_ELEMENTS;
+            int collectionSize = collection.size();
+            int fullPages = collectionSize / PRINT_MAX_ELEMENTS;
+            boolean hasLeftover = (collectionSize % fullPages) != 0;
+            int currentPage = 0;
+            int pageNum = fullPages + ((hasLeftover) ? 1 : 0);
+
+            boolean loop = true;
+            do{
+                if(hasLeftover && currentPage == fullPages + 1){
+                    itemsToDisplay = collectionSize % PRINT_MAX_ELEMENTS;
+                }
+                int start = currentPage * PRINT_MAX_ELEMENTS;
+                printSubCollection(start, start + itemsToDisplay);
+                System.out.println((currentPage+1) + "/" + pageNum);
+                System.out.println("Please input a/d to see the previous/next cards in your collection");
+                System.out.println("Input anything else to quit this screen.");
+                //TODO: cases where the input starts with a letter
+                char input = scanner.next().charAt(0);
+                scanner.nextLine();
+                switch(input){
+                    case 'a':
+                        if(currentPage == 0){
+                            System.out.println("Can't go back.");
+                            break;
+                        }
+                        currentPage--;
+                        break;
+                    case 'd':
+                        if(currentPage == pageNum-1){
+                            System.out.println("Can't go forward.");
+                            break;
+                        }
+                        currentPage++;
+                        break;
+                    default:
+                        loop = false;
+                }
+                System.out.println();
+            } while(loop);
         }
-        //TODO: find a better way to make this work
-        System.out.println("Please input something to exit.");
-        scanner.nextLine();
+    }
+
+    private void printSubCollection(int start, int end){
+        String amStr = " Amount ";
+        String prStr = "  Price  ";
+        String expStr = " Expansion ";
+        String rarStr = "    Rarity    ";
+        String naStr  = " Card Name ";
+        List<Card> subCollection = collection.subList(start, end);
+        System.out.println();
+        System.out.println(amStr + "|" + prStr + "|" + expStr + "|" + rarStr + "|" + naStr);
+        for(Card current : subCollection){
+            System.out.println(
+                    Algorithms.padString(String.valueOf(current.getAmount()),  amStr.length())  + "|"
+                            + Algorithms.padString(String.valueOf(current.getPrice()), prStr.length())  + "|"
+                            + Algorithms.padString(current.getCardExpansion(),         expStr.length()) + "|"
+                            + Algorithms.padString(current.getCardRarity(),            rarStr.length()) + "|"
+                            + Algorithms.padString(current.getCardName(),              0)
+            );
+        }
+        System.out.println();
     }
 
     /**
