@@ -13,13 +13,12 @@ Implemented features:
 	-Listing cards in a library
 	-Updating prices of the cards in the library
 	-Looking up a given card's lowest price (not necessarily in a library)
+    -Page flipping through library
 
 WIP (in sort of an order of priority, I guess idk):
 
 	-Search for cards (and display single card)
 	-Recording card price at a given time
-	-Ordering cards when viewing (or filtering results)
-	-Display constant number of cards, and "flip pages"
 	-Limit Rarities
 	-Analize price fluctuations and alerting the user of them;
 	-Detecting typos in input and guessing the intended input;
