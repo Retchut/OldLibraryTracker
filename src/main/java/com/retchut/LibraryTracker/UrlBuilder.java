@@ -4,15 +4,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.retchut.LibraryTracker.Algorithms;
+
 final public class UrlBuilder {
     private StringBuilder urlStart;
     private List<String> possibleUrls;
 
     private void buildUrlExpansion(String expansionKey){
         String expansion = ExpansionMap.getExpansion(expansionKey);
-        if(expansion == "")
+        if(expansion == ""){
+            Algorithms.log(expansionKey + ": There's no such expansion");
             System.out.println(expansionKey + ": There's no such expansion");
             //TODO: throw exception / return false and go back
+        }
         urlStart.append(expansion);
         urlStart.append('/');
     }

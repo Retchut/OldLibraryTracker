@@ -163,6 +163,7 @@ public class LibraryTracker {
             }
             else{
                 card.setPrice(newPrice);
+                Algorithms.log("Success");
                 System.out.println("Success");
             }
         }

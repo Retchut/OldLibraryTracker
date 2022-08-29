@@ -49,17 +49,28 @@ public class Library {
             double price;
             int line = 1;
             List<Card> loadedCollection = new ArrayList<>();
+            int check = 0;
             try{
                 while(fileReader.hasNextLine()){
+                    check = 0;
                     name = fileReader.next();
+                    check++;
                     version = fileReader.nextInt();
+                    check++;
                     rarity = fileReader.next();
+                    check++;
                     expansion = fileReader.next();
+                    check++;
                     condition = fileReader.next();
+                    check++;
                     language = fileReader.next();
+                    check++;
                     firstEd = fileReader.nextBoolean();
+                    check++;
                     amount = fileReader.nextInt();
+                    check++;
                     price = fileReader.nextDouble();
+                    check++;
                     fileReader.nextLine();
                     loadedCollection.add(new Card(new CardInfo(name, version, rarity, expansion), Card.CONDITION.valueOf(condition), Card.LANGUAGE.valueOf(language), firstEd, amount, price));
                     line++;
@@ -67,13 +78,13 @@ public class Library {
             }
             catch(IllegalArgumentException e){
                 e.printStackTrace();
-                System.out.println("Line " + line + " of the library file is invalid. No library was loaded.");
+                System.out.println("Failed reading line " + line + " past check number " + check + " of the library file. No library was loaded.");
                 success = false;
                 fileReader.close();
             }
             catch(InputMismatchException e){
                 e.printStackTrace();
-                System.out.println("Line " + line + " of the library file is invalid. No library was loaded.");
+                System.out.println("Failed reading line " + line + " past check number " + check + " of the library file. No library was loaded.");
                 success = false;
                 fileReader.close();
             }

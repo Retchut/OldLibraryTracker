@@ -17,7 +17,6 @@ public class CardInfo {
       this.version = v;
       this.rarity = r;
       this.expansion = e;
-      
     }
 
     //---------------------------------------SETTERS
