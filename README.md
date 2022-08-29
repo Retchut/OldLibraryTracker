@@ -1,5 +1,7 @@
+## CURRENTLY REMAKING THIS IN ANOTHER LANGUAGE
+This won't be touched for the near future
+
 # LibraryTracker
-Work in progress.
 
 Simple program to track a card library, or a library of any type.
 
