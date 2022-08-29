@@ -1,4 +1,4 @@
-package com.retchut.LibraryTracker.Model;
+package com.retchut.LibraryTracker;
 
 public class CardInfo {
     private String name, rarity, expansion;
@@ -20,7 +20,7 @@ public class CardInfo {
       
     }
 
-    //---------------------------------------GETTERS
+    //---------------------------------------SETTERS
     public void setName(String n){
       this.name = n;
     }

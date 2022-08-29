@@ -1,6 +1,6 @@
 package com.retchut.LibraryTracker;
 
-import com.retchut.LibraryTracker.Model.Card;
+import com.retchut.LibraryTracker.Card;
 
 import java.util.List;
 

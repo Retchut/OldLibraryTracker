@@ -1,4 +1,4 @@
-package com.retchut.LibraryTracker.Model;
+package com.retchut.LibraryTracker;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
